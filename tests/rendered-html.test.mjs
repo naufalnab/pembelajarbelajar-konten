@@ -22,9 +22,10 @@ test("server-rendered homepage contains the complete conversion path", async () 
   assert.match(html, /AI Content Factory — Ubah Ide Jadi Konten/);
   assert.match(html, /Punya ide\./);
   assert.match(html, /Demo Konsep/);
-  assert.match(html, /Rp1,25 juta/);
-  assert.match(html, /Rp3,5 juta/);
-  assert.match(html, /Rp5,5 juta/);
+  assert.match(html, /AI Content Consultation/);
+  assert.match(html, /Mulai Rp200 ribu/);
+  assert.match(html, /Mulai Rp450 ribu/);
+  assert.match(html, /Rp3,2 juta/);
   assert.match(html, /Revisi dibuat jelas sejak awal/);
   assert.match(html, /Pertanyaan umum/);
   assert.match(html, /wa\.me\/6282328591004/);

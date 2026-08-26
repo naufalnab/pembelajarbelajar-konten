@@ -70,12 +70,12 @@ export const navigation: readonly NavigationItem[] = [
 export const ctaMessages = {
   generic:
     "Assalamu'alaikum, saya punya satu topik yang ingin dijadikan konten: ...",
-  trial:
-    "Assalamu'alaikum, saya tertarik mencoba AI Content Trial 3 video.",
+  consultation:
+    "Assalamu'alaikum, saya tertarik dengan AI Content Consultation 60 menit. Saya ingin konsultasi mengenai: ...",
+  production:
+    "Assalamu'alaikum, saya sudah memiliki bahan/script dan ingin meminta estimasi AI Video Production. Kebutuhan saya: ...",
   factory:
-    "Assalamu'alaikum, saya tertarik dengan AI Content Factory 8 video per bulan.",
-  growth:
-    "Assalamu'alaikum, saya ingin diskusi tentang AI Content Growth 12 video per bulan.",
+    "Assalamu'alaikum, saya tertarik dengan AI Content Factory. Saya punya satu topik yang ingin dijadikan konten: ...",
 } as const;
 
 export type CtaMessageKey = keyof typeof ctaMessages;
@@ -97,9 +97,9 @@ export function getWhatsAppUrl(
 
 export const whatsappLinks = {
   generic: getWhatsAppUrl("generic"),
-  trial: getWhatsAppUrl("trial"),
+  consultation: getWhatsAppUrl("consultation"),
+  production: getWhatsAppUrl("production"),
   factory: getWhatsAppUrl("factory"),
-  growth: getWhatsAppUrl("growth"),
 } as const;
 
 export type EcosystemLink = {

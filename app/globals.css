@@ -556,21 +556,41 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
 .price-features li svg { flex: none; color: var(--brand-mid); }
 .is-recommended .price-features li { color: rgba(255,255,255,.88); }
 .is-recommended .price-features li svg { color: #59d1ad; }
+.price-microcopy { margin: -7px 0 17px; color: #61706a; font-size: .62rem; line-height: 1.48; }
+.is-recommended .price-microcopy { color: rgba(255,255,255,.68); }
 
 .pricing-card .cta-link { width: 100%; margin-top: auto; padding-inline: 14px; font-size: .78rem; font-weight: 780; }
 .is-recommended .cta-primary { color: var(--brand); border-color: var(--accent); background: var(--accent); box-shadow: 0 14px 32px rgba(0,0,0,.18); }
 .is-recommended .cta-primary:hover { background: #e8b359; }
 
-/* Shared Scope Strip */
-.pricing-scope-strip { margin-top: 24px; padding: 14px 20px; border: 1px solid rgba(18, 63, 57, .14); border-radius: var(--radius-md); background: rgba(255, 255, 255, .85); box-shadow: var(--shadow-sm); }
-.scope-strip-desktop { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; }
-.scope-strip-main { display: flex; align-items: center; gap: 9px; flex: 1; min-width: 260px; }
-.scope-strip-bullet { color: var(--accent); font-size: .85rem; flex-shrink: 0; }
-.scope-strip-text { margin: 0; color: #384a44; font-size: .75rem; line-height: 1.5; }
-.scope-strip-text strong { color: var(--brand); font-weight: 800; }
-.scope-strip-link { display: inline-flex; align-items: center; gap: 4px; color: var(--brand); text-decoration: underline; text-underline-offset: 3px; font-size: .73rem; font-weight: 780; white-space: nowrap; transition: color .18s ease; }
-.scope-strip-link:hover { color: var(--brand-mid); }
-.scope-strip-mobile { display: none; }
+/* Service selection details */
+.production-context { display: grid; grid-template-columns: 1.1fr 1fr .85fr; align-items: center; gap: 20px; margin-top: 24px; padding: 16px 20px; border: 1px solid rgba(18,63,57,.14); border-radius: var(--radius-md); background: rgba(255,255,255,.85); box-shadow: var(--shadow-sm); }
+.production-context p { margin: 0; color: #52615c; font-size: .68rem; line-height: 1.5; }
+.production-context-label { margin-bottom: 4px !important; color: var(--brand) !important; font-size: .62rem !important; font-weight: 850; text-transform: uppercase; letter-spacing: .08em; }
+.production-context ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; margin: 0; padding: 0; }
+.production-context li { display: flex; align-items: center; gap: 5px; color: #3d4e48; font-size: .64rem; font-weight: 700; }
+.production-context li svg { flex: none; color: var(--brand-mid); }
+.revision-note-inline { padding-left: 13px; border-left: 2px solid var(--accent); }
+
+.factory-packages { margin-top: 22px; padding: 25px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-sm); }
+.factory-package-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 19px; }
+.factory-package-heading .section-eyebrow { margin-bottom: 7px; }
+.factory-package-heading h3 { margin: 0; color: var(--brand); font-size: 1.35rem; letter-spacing: -.04em; }
+.factory-package-heading > div > p:last-child { max-width: 570px; margin: 8px 0 0; color: var(--muted); font-size: .73rem; line-height: 1.5; }
+.routine-badge { flex: none; padding: 5px 9px; border-radius: 999px; color: #8a682f; background: var(--accent-soft); font-size: .59rem; font-weight: 800; }
+.factory-package-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+.factory-package-option { position: relative; display: grid; gap: 3px; min-width: 0; padding: 15px; border: 1px solid var(--border); border-radius: 11px; color: var(--foreground); background: #fbfcf8; text-decoration: none; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.factory-package-option:hover { transform: translateY(-2px); border-color: #96ada3; box-shadow: var(--shadow-sm); }
+.factory-package-option > span { color: var(--brand); font-size: .67rem; font-weight: 800; }.factory-package-option strong { font-size: 1.05rem; letter-spacing: -.04em; }.factory-package-option small { color: var(--muted); font-size: .57rem; }
+.factory-package-option em { width: fit-content; margin-top: 4px; padding: 3px 6px; border-radius: 5px; color: #8a682f; background: rgba(217,164,74,.16); font-size: .52rem; font-style: normal; font-weight: 800; }
+.factory-package-option.is-package-recommended { border-color: var(--brand); background: var(--brand-soft); }
+.factory-package-disclaimer { margin: 14px 0 0; color: var(--muted); font-size: .62rem; line-height: 1.55; }
+
+.service-comparison { margin-top: 22px; padding: 20px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.comparison-title { margin: 0 0 13px; color: var(--brand); font-size: .9rem; font-weight: 800; letter-spacing: -.02em; }
+.service-comparison > div { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.service-comparison article { padding: 15px; border-radius: 11px; background: rgba(255,255,255,.65); }.service-comparison article span { display: block; margin-bottom: 5px; color: var(--brand-mid); font-size: .59rem; font-weight: 850; text-transform: uppercase; letter-spacing: .07em; }.service-comparison article strong { display: block; font-size: .8rem; }.service-comparison article p { margin: 6px 0 0; color: var(--muted); font-size: .66rem; line-height: 1.5; }
+.consultation-line { margin: 13px 0 0; color: #52615c; font-size: .68rem; font-weight: 700; }
 
 .pricing-disclaimer { max-width: 900px; margin: 20px auto 0; color: var(--muted); text-align: center; font-size: .66rem; line-height: 1.6; }
 
@@ -729,18 +749,13 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
   .category-works-grid .work-item-card.is-wide-card { grid-column: span 1; }
   .series-case-card { grid-template-columns: 1fr; }
   .range-cta-box { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 580px; margin-inline: auto; }
   .pricing-card[data-plan="factory"] { order: 1; transform: none; }
-  .pricing-card[data-plan="trial"] { order: 2; }
-  .pricing-card[data-plan="growth"] { order: 3; }
+  .pricing-card[data-plan="production"] { order: 2; }
+  .pricing-card[data-plan="consultation"] { order: 3; }
   .price-target { min-height: 0; }
-  .pricing-scope-strip { padding: 14px 16px; }
-  .scope-strip-desktop { display: none; }
-  .scope-strip-mobile { display: block; width: 100%; }
-  .scope-mobile-header { display: flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--brand); margin-bottom: 9px; }
-  .scope-mobile-grid { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 10px; margin: 0 0 10px; padding: 0; }
-  .scope-mobile-grid li { display: flex; align-items: center; gap: 5px; color: #3d4e48; font-size: .7rem; font-weight: 650; }
-  .scope-mobile-grid li svg { color: var(--brand-mid); flex-shrink: 0; }
-  .scope-mobile-footer { padding-top: 8px; border-top: 1px dashed rgba(18, 63, 57, .12); }
+  .production-context { grid-template-columns: 1fr; max-width: 580px; margin-inline: auto; }
+  .factory-packages, .service-comparison { max-width: 580px; margin-inline: auto; }
   .scope-safety-grid { grid-template-columns: 1fr; }
   .onboarding-steps { grid-template-columns: repeat(2, 1fr); }
   .faq-layout { grid-template-columns: 1fr; gap: 45px; }
@@ -813,6 +828,7 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
   .before-after-grid > .between-arrow:last-of-type { display: block; }
   .output-panel { grid-column: auto; min-height: 245px !important; margin-top: 0; }
   .pricing-card { padding: 28px 22px 23px; }
+  .factory-packages { padding: 21px 17px; }.factory-package-heading { align-items: flex-start; flex-direction: column; }.factory-package-grid { grid-template-columns: 1fr 1fr; gap: 8px; }.factory-package-option { padding: 13px; }.service-comparison { padding: 17px 0; }.service-comparison > div { grid-template-columns: 1fr; gap: 8px; }
   .scope-safety-section { padding-top: 20px; }
   .scope-details summary { min-height: 112px; padding: 22px; }
   .scope-details ul { grid-template-columns: 1fr; padding-inline: 22px; }

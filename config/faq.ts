@@ -51,7 +51,7 @@ export const faqItems: readonly FaqItem[] = [
     id: "produksi-rutin",
     question: "Apakah bisa dibuat rutin setiap bulan?",
     answer:
-      "Ya. Paket Factory dan Growth dirancang untuk produksi rutin, dengan content direction, workflow approval, dan consistency antarkonten.",
+      "Ya. AI Content Factory tersedia dalam paket 1, 4, 8, atau 12 video untuk produksi rutin, dengan workflow approval dan consistency antarkonten.",
   },
   {
     id: "untuk-sekolah",
@@ -90,4 +90,3 @@ export const faqItems: readonly FaqItem[] = [
       "Audio disesuaikan dengan kebutuhan brand. Untuk demo Pembelajar Belajar, pendekatan default memprioritaskan voice-over, ambience, dan sound effects non-musikal bila diperlukan.",
   },
 ];
-

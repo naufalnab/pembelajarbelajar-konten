@@ -1,7 +1,7 @@
-import { ArrowUpRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { pricingDisclaimer, pricingPlans, sharedScopeSummary } from "@/config/pricing";
+import { factoryPackageDisclaimer, factoryPackages, pricingDisclaimer, productionScope, services } from "@/config/pricing";
 import { buildWhatsAppUrl } from "@/config/site";
 
 export function PricingSection() {
@@ -10,40 +10,27 @@ export function PricingSection() {
       <div className="container">
         <SectionHeading
           id="pricing-title"
-          eyebrow="Paket produksi"
-          title="Pilih cara mulai yang paling masuk akal."
-          description="Mulai dari beberapa konten untuk mencoba workflow, lalu lanjut ke produksi rutin jika sudah cocok."
+          eyebrow="Pilih sesuai kebutuhan"
+          title="Pilih cara mulai yang paling sesuai."
+          description="Mau membuat sendiri, sudah punya bahan, atau baru punya satu topik? Pilih seberapa jauh Anda ingin kami membantu."
         />
 
         <div className="pricing-grid">
-          {pricingPlans.map((plan) => (
+          {services.map((plan) => (
             <article
               key={plan.id}
               data-plan={plan.id}
               className={`pricing-card ${plan.recommended ? "is-recommended" : ""}`}
             >
-              {/* 1. Badge / Kategori */}
               <p className="price-badge">{plan.badge}</p>
-
-              {/* 2. Nama Paket */}
               <h3>{plan.name}</h3>
-
-              {/* 3. Harga & 4. Jumlah Video (Muncul sebelum daftar benefit) */}
               <div className="price-header-block">
                 <p className="price">
                   <strong>{plan.price}</strong>
-                  {plan.priceSuffix && <span>{plan.priceSuffix}</span>}
-                </p>
-                <p className="price-volume">
-                  <span className="volume-tag">{plan.volume}</span>
-                  {plan.cadence && <span className="cadence-tag">· {plan.cadence}</span>}
+                  <span>{plan.priceSuffix}</span>
                 </p>
               </div>
-
-              {/* 5. Satu kalimat "cocok untuk siapa" */}
               <p className="price-target">{plan.targetAudience}</p>
-
-              {/* 6. Maksimal empat benefit utama */}
               <ul className="price-features">
                 {plan.features.map((feature) => (
                   <li key={feature}>
@@ -52,8 +39,7 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-
-              {/* 7. CTA */}
+              {plan.microcopy && <p className="price-microcopy">{plan.microcopy}</p>}
               <CtaLink
                 href={buildWhatsAppUrl(plan.ctaMessage)}
                 eventName={plan.analyticsEvent}
@@ -66,53 +52,33 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Shared Scope Strip di bawah ketiga cards */}
-        <div className="pricing-scope-strip" aria-label="Cakupan standar semua paket">
-          {/* Desktop single line */}
-          <div className="scope-strip-desktop">
-            <div className="scope-strip-main">
-              <span className="scope-strip-bullet" aria-hidden="true">✦</span>
-              <p className="scope-strip-text">
-                <strong>Semua paket mencakup:</strong> short-form ±20–60 detik · format 9:16 · produksi berbantuan AI · maksimal 2 putaran revisi minor
-              </p>
-            </div>
-            <a href="#revisi" className="scope-strip-link">
-              <span>{sharedScopeSummary.linkText}</span>
-              <ArrowUpRight size={13} aria-hidden="true" />
-            </a>
+        <div className="production-context">
+          <div>
+            <p className="production-context-label">Untuk AI Video Production</p>
+            <p>Semakin lengkap bahan Anda, semakin sedikit tahap strategi yang perlu dikerjakan.</p>
           </div>
+          <ul>{productionScope.map((item) => <li key={item}><Check size={12} aria-hidden="true" />{item}</li>)}</ul>
+          <p className="revision-note-inline">Production dan Factory mencakup maksimal 2 putaran revisi minor sesuai workflow produksi.</p>
+        </div>
 
-          {/* Mobile compact block */}
-          <div className="scope-strip-mobile">
-            <div className="scope-mobile-header">
-              <span className="scope-strip-bullet" aria-hidden="true">✦</span>
-              <strong>Semua paket mencakup:</strong>
-            </div>
-            <ul className="scope-mobile-grid">
-              <li>
-                <Check size={12} strokeWidth={2.5} aria-hidden="true" />
-                <span>±20–60 detik</span>
-              </li>
-              <li>
-                <Check size={12} strokeWidth={2.5} aria-hidden="true" />
-                <span>Format 9:16</span>
-              </li>
-              <li>
-                <Check size={12} strokeWidth={2.5} aria-hidden="true" />
-                <span>Produksi berbantuan AI</span>
-              </li>
-              <li>
-                <Check size={12} strokeWidth={2.5} aria-hidden="true" />
-                <span>Maks. 2 revisi minor</span>
-              </li>
-            </ul>
-            <div className="scope-mobile-footer">
-              <a href="#revisi" className="scope-strip-link">
-                <span>{sharedScopeSummary.linkText}</span>
-                <ArrowUpRight size={13} aria-hidden="true" />
-              </a>
-            </div>
+        <section className="factory-packages" aria-labelledby="factory-package-title">
+          <div className="factory-package-heading">
+            <div><p className="section-eyebrow">Produksi rutin</p><h3 id="factory-package-title">Butuh konten rutin?</h3><p>Untuk produksi beberapa video sekaligus, tersedia harga paket yang lebih efisien.</p></div>
+            <span className="routine-badge">Cocok untuk produksi rutin</span>
           </div>
+          <div className="factory-package-grid">
+            {factoryPackages.map((item) => <a key={item.videos} className={`factory-package-option ${item.recommended ? "is-package-recommended" : ""}`} href={buildWhatsAppUrl(`Assalamu'alaikum, saya tertarik paket AI Content Factory ${item.videos} video.`)}><span>{item.videos} video</span><strong>{item.price}</strong>{item.note && <small>{item.note}</small>}{item.recommended && <em>Produksi rutin</em>}</a>)}
+          </div>
+          <p className="factory-package-disclaimer">{factoryPackageDisclaimer}</p>
+        </section>
+
+        <div className="service-comparison" aria-label="Perbedaan layanan production dan factory">
+          <p className="comparison-title">Apa bedanya Production dan Factory?</p>
+          <div>
+            <article><span>AI Video Production</span><strong>Anda sudah membawa bahan.</strong><p>Kami fokus mengubah bahan tersebut menjadi visual dan video.</p></article>
+            <article><span>AI Content Factory</span><strong>Anda cukup membawa topik.</strong><p>Topik → Angle → Hook → Script → Storyboard → Visual → Video → Caption</p></article>
+          </div>
+          <p className="consultation-line">Ingin mengerjakan workflow-nya sendiri? Gunakan Consultation.</p>
         </div>
 
         <p className="pricing-disclaimer">{pricingDisclaimer}</p>

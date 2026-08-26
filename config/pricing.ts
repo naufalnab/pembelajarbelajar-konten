@@ -1,17 +1,16 @@
 import { ctaMessages, type CtaMessageKey } from "./site";
 
-export type PricingPlanId = "trial" | "factory" | "growth";
+export type ServiceId = "consultation" | "production" | "factory";
 
-export interface PricingPlan {
-  id: PricingPlanId;
+export interface ServicePlan {
+  id: ServiceId;
   badge: string;
   name: string;
   price: string;
-  priceSuffix?: string;
-  volume: string;
-  cadence?: string;
+  priceSuffix: string;
   targetAudience: string;
   features: readonly string[];
+  microcopy?: string;
   ctaLabel: string;
   ctaMessageKey: CtaMessageKey;
   ctaMessage: string;
@@ -19,76 +18,24 @@ export interface PricingPlan {
   recommended: boolean;
 }
 
-export const pricingPlans: readonly PricingPlan[] = [
-  {
-    id: "trial",
-    badge: "Coba Dulu",
-    name: "AI Content Trial",
-    price: "Rp1,25 juta",
-    volume: "3 video",
-    targetAudience: "Untuk mencoba workflow sebelum produksi rutin.",
-    features: [
-      "Ide + hook",
-      "Script + storyboard",
-      "Visual + editing",
-      "Caption siap posting",
-    ],
-    ctaLabel: "Coba 3 Video",
-    ctaMessageKey: "trial",
-    ctaMessage: ctaMessages.trial,
-    analyticsEvent: "cta_pricing_trial",
-    recommended: false,
-  },
-  {
-    id: "factory",
-    badge: "Paling Cocok untuk Mulai Rutin",
-    name: "AI Content Factory",
-    price: "Rp3,5 juta",
-    priceSuffix: "/ bulan",
-    volume: "8 video / bulan",
-    cadence: "±2 video per minggu",
-    targetAudience: "Untuk brand yang ingin konsisten sekitar 2 video per minggu.",
-    features: [
-      "Content direction bulanan",
-      "Script + storyboard",
-      "Visual direction konsisten",
-      "Editing + caption",
-    ],
-    ctaLabel: "Mulai Produksi Bulanan",
-    ctaMessageKey: "factory",
-    ctaMessage: ctaMessages.factory,
-    analyticsEvent: "cta_pricing_factory",
-    recommended: true,
-  },
-  {
-    id: "growth",
-    badge: "Produksi Lebih Aktif",
-    name: "AI Content Growth",
-    price: "Rp5,5 juta",
-    priceSuffix: "/ bulan",
-    volume: "12 video / bulan",
-    targetAudience: "Untuk brand dengan ritme produksi lebih aktif.",
-    features: [
-      "Semua layanan Factory",
-      "Lebih banyak variasi angle",
-      "Prioritas produksi",
-      "Opsi variasi hook",
-    ],
-    ctaLabel: "Diskusikan Growth",
-    ctaMessageKey: "growth",
-    ctaMessage: ctaMessages.growth,
-    analyticsEvent: "cta_pricing_growth",
-    recommended: false,
-  },
+export const services: readonly ServicePlan[] = [
+  { id: "consultation", badge: "Mau bikin sendiri", name: "AI Content Consultation", price: "Rp200 ribu", priceSuffix: "/ 60 menit", targetAudience: "Untuk Anda yang ingin mengerjakan kontennya sendiri, tetapi butuh arahan untuk menyelesaikan workflow atau masalah tertentu.", features: ["Review ide & workflow", "Bedah prompt / storyboard", "Troubleshooting visual & consistency", "Tanya jawab produksi AI"], microcopy: "Fokus konsultasi disepakati sebelum sesi agar 60 menit dapat digunakan secara efektif.", ctaLabel: "Jadwalkan Konsultasi", ctaMessageKey: "consultation", ctaMessage: ctaMessages.consultation, analyticsEvent: "cta_pricing_consultation", recommended: false },
+  { id: "production", badge: "Sudah punya bahan", name: "AI Video Production", price: "Mulai Rp200 ribu", priceSuffix: "/ video", targetAudience: "Untuk Anda yang sudah memiliki script, voice-over, materi, atau arah konten yang jelas dan membutuhkan bantuan di tahap produksi.", features: ["Visual production", "AI video generation", "Editing dasar", "Final format siap digunakan"], ctaLabel: "Minta Estimasi Produksi", ctaMessageKey: "production", ctaMessage: ctaMessages.production, analyticsEvent: "cta_pricing_production", recommended: false },
+  { id: "factory", badge: "Full service", name: "AI Content Factory", price: "Mulai Rp450 ribu", priceSuffix: "/ video", targetAudience: "Untuk brand yang baru punya topik atau materi mentah dan ingin kami mengerjakan alurnya sampai video siap posting.", features: ["Ide & angle", "Hook + script", "Storyboard", "Visual direction + produksi", "Editing + caption"], microcopy: "Anda cukup mulai dari topiknya.", ctaLabel: "Kirim 1 Topik", ctaMessageKey: "factory", ctaMessage: ctaMessages.factory, analyticsEvent: "cta_pricing_factory", recommended: true },
 ];
 
-export const sharedScopeSummary = {
-  text: "Semua paket mencakup: short-form ±20–60 detik · format 9:16 · produksi berbantuan AI · maksimal 2 putaran revisi minor",
-  linkText: "Lihat detail cakupan & revisi",
-} as const;
+export const factoryPackages = [
+  { videos: 1, price: "Rp450 ribu", note: "", recommended: false },
+  { videos: 4, price: "Rp1,7 juta", note: "≈ Rp425 ribu/video", recommended: false },
+  { videos: 8, price: "Rp3,2 juta", note: "≈ Rp400 ribu/video", recommended: true },
+  { videos: 12, price: "Rp4,5 juta", note: "≈ Rp375 ribu/video", recommended: false },
+] as const;
 
-export const pricingDisclaimer =
-  "Paket dirancang untuk short-form storytelling dengan tingkat kompleksitas produksi normal. Kebutuhan khusus seperti durasi panjang, banyak karakter, rendering kompleks, versi bahasa tambahan, atau produksi dengan scope berbeda akan dibicarakan terlebih dahulu.";
+export const productionScope = ["Script final", "Voice-over / materi", "CTA", "Referensi visual bila ada"] as const;
+
+export const pricingDisclaimer = "Harga mulai berlaku untuk short-form sederhana dengan kompleksitas produksi normal. Durasi, jumlah scene, karakter, style visual, dan kompleksitas produksi dapat memengaruhi estimasi.";
+
+export const factoryPackageDisclaimer = "Paket di atas menggunakan scope short-form dengan tingkat kompleksitas produksi normal. Kebutuhan khusus akan dibicarakan sebelum produksi dimulai.";
 
 export const packageExclusions = {
   intro:
