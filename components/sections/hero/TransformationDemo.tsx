@@ -9,16 +9,11 @@ export function TransformationDemo() {
     <section className="transformation-panel" aria-label="Demo alur transformasi konten dari topik sampai video siap posting">
       {/* Header Panel */}
       <div className="transformation-header">
-        <div className="header-left">
-          <span className="transformation-eyebrow">
-            <span className="live-dot" aria-hidden="true" />
-            {heroDemoData.eyebrow}
-          </span>
-          <p className="transformation-descriptor">{heroDemoData.descriptor}</p>
-        </div>
-        <div className="header-right">
-          <span className="client-badge">Input Klien → Output Final</span>
-        </div>
+        <span className="transformation-eyebrow">
+          <span className="live-dot" aria-hidden="true" />
+          {heroDemoData.eyebrow}
+        </span>
+        <p className="transformation-descriptor">{heroDemoData.descriptor}</p>
       </div>
 
       {/* Main 3-Step Flow */}

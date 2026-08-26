@@ -62,14 +62,14 @@ export const pricingPlans: readonly PricingPlan[] = [
   },
   {
     id: "growth",
-    badge: "Volume Lebih Aktif",
+    badge: "Produksi Lebih Aktif",
     name: "AI Content Growth",
     price: "Rp5,5 juta",
     priceSuffix: "/ bulan",
     volume: "12 video / bulan",
     targetAudience: "Untuk brand dengan ritme produksi lebih aktif.",
     features: [
-      "Semua proses Factory",
+      "Semua layanan Factory",
       "Lebih banyak variasi angle",
       "Prioritas produksi",
       "Opsi variasi hook",
@@ -83,8 +83,8 @@ export const pricingPlans: readonly PricingPlan[] = [
 ];
 
 export const sharedScopeSummary = {
-  text: "Semua paket mencakup: short-form ±20–60 detik · format 9:16 · AI-assisted production · maksimal 2 putaran revisi minor",
-  linkText: "Lihat detail scope & revisi",
+  text: "Semua paket mencakup: short-form ±20–60 detik · format 9:16 · produksi berbantuan AI · maksimal 2 putaran revisi minor",
+  linkText: "Lihat detail cakupan & revisi",
 } as const;
 
 export const pricingDisclaimer =

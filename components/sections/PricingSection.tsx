@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { pricingDisclaimer, pricingPlans, sharedScopeSummary } from "@/config/pricing";
@@ -17,20 +17,18 @@ export function PricingSection() {
 
         <div className="pricing-grid">
           {pricingPlans.map((plan) => (
-            <article key={plan.id} className={`pricing-card ${plan.recommended ? "is-recommended" : ""}`}>
-              {plan.recommended && (
-                <span className="recommended-corner">
-                  <Sparkles size={13} aria-hidden="true" /> Recommended
-                </span>
-              )}
-
-              {/* 1. Badge / Category */}
+            <article
+              key={plan.id}
+              data-plan={plan.id}
+              className={`pricing-card ${plan.recommended ? "is-recommended" : ""}`}
+            >
+              {/* 1. Badge / Kategori */}
               <p className="price-badge">{plan.badge}</p>
 
               {/* 2. Nama Paket */}
               <h3>{plan.name}</h3>
 
-              {/* 3. Harga & 4. Jumlah Video (Muncul sebelum benefit) */}
+              {/* 3. Harga & 4. Jumlah Video (Muncul sebelum daftar benefit) */}
               <div className="price-header-block">
                 <p className="price">
                   <strong>{plan.price}</strong>
@@ -70,16 +68,51 @@ export function PricingSection() {
 
         {/* Shared Scope Strip di bawah ketiga cards */}
         <div className="pricing-scope-strip" aria-label="Cakupan standar semua paket">
-          <div className="scope-strip-main">
-            <span className="scope-strip-bullet" aria-hidden="true">✦</span>
-            <p className="scope-strip-text">
-              <strong>Semua paket mencakup:</strong> short-form ±20–60 detik · format 9:16 · AI-assisted production · maksimal 2 putaran revisi minor
-            </p>
+          {/* Desktop single line */}
+          <div className="scope-strip-desktop">
+            <div className="scope-strip-main">
+              <span className="scope-strip-bullet" aria-hidden="true">✦</span>
+              <p className="scope-strip-text">
+                <strong>Semua paket mencakup:</strong> short-form ±20–60 detik · format 9:16 · produksi berbantuan AI · maksimal 2 putaran revisi minor
+              </p>
+            </div>
+            <a href="#revisi" className="scope-strip-link">
+              <span>{sharedScopeSummary.linkText}</span>
+              <ArrowUpRight size={13} aria-hidden="true" />
+            </a>
           </div>
-          <a href="#revisi" className="scope-strip-link">
-            <span>{sharedScopeSummary.linkText}</span>
-            <ArrowUpRight size={13} aria-hidden="true" />
-          </a>
+
+          {/* Mobile compact block */}
+          <div className="scope-strip-mobile">
+            <div className="scope-mobile-header">
+              <span className="scope-strip-bullet" aria-hidden="true">✦</span>
+              <strong>Semua paket mencakup:</strong>
+            </div>
+            <ul className="scope-mobile-grid">
+              <li>
+                <Check size={12} strokeWidth={2.5} aria-hidden="true" />
+                <span>±20–60 detik</span>
+              </li>
+              <li>
+                <Check size={12} strokeWidth={2.5} aria-hidden="true" />
+                <span>Format 9:16</span>
+              </li>
+              <li>
+                <Check size={12} strokeWidth={2.5} aria-hidden="true" />
+                <span>Produksi berbantuan AI</span>
+              </li>
+              <li>
+                <Check size={12} strokeWidth={2.5} aria-hidden="true" />
+                <span>Maks. 2 revisi minor</span>
+              </li>
+            </ul>
+            <div className="scope-mobile-footer">
+              <a href="#revisi" className="scope-strip-link">
+                <span>{sharedScopeSummary.linkText}</span>
+                <ArrowUpRight size={13} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
         </div>
 
         <p className="pricing-disclaimer">{pricingDisclaimer}</p>
