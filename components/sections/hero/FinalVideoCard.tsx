@@ -21,7 +21,7 @@ export function FinalVideoCard({ data }: { data: HeroDemoData["video"] }) {
   }, [showDemoModal]);
 
   const handlePlayClick = () => {
-    if (data.videoSrc) {
+    if (data.videoSrc || data.youtubeId) {
       setIsPlaying(true);
     } else {
       setShowDemoModal(true);
@@ -55,7 +55,15 @@ export function FinalVideoCard({ data }: { data: HeroDemoData["video"] }) {
             </div>
 
             {/* Video content / Poster */}
-            {data.videoSrc && isPlaying ? (
+            {data.youtubeId && isPlaying ? (
+              <iframe
+                className="actual-video video-embed-iframe"
+                src={`https://www.youtube-nocookie.com/embed/${data.youtubeId}?autoplay=1&playsinline=1&rel=0`}
+                title={`Video demo: ${data.title}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : data.videoSrc && isPlaying ? (
               <video
                 controls
                 autoPlay
@@ -71,7 +79,11 @@ export function FinalVideoCard({ data }: { data: HeroDemoData["video"] }) {
                 Browser Anda tidak mendukung video HTML5.
               </video>
             ) : (
-              <div className="video-poster-art">
+                <div className="video-poster-art">
+                {data.youtubeId && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="hero-video-thumbnail" src={`https://i.ytimg.com/vi/${data.youtubeId}/hqdefault.jpg`} alt="Thumbnail video Berani Mencoba" />
+                )}
                 {/* Stylized storytelling poster */}
                 <div className="poster-backdrop" aria-hidden="true">
                   <div className="art-circle art-circle-1" />
@@ -82,7 +94,7 @@ export function FinalVideoCard({ data }: { data: HeroDemoData["video"] }) {
                 <div className="poster-content">
                   <span className="poster-tagline">
                     <Sparkles size={11} aria-hidden="true" />
-                    <span>Storytelling Edukasi</span>
+                    <span>{data.youtubeId ? "Tonton contoh video" : "Storytelling Edukasi"}</span>
                   </span>
 
                   <div className="poster-title-group">
@@ -104,7 +116,7 @@ export function FinalVideoCard({ data }: { data: HeroDemoData["video"] }) {
 
                   <div className="poster-sound-hint" aria-hidden="true">
                     <Volume2 size={11} />
-                    <span>Audio + Voiceover Siap</span>
+                    <span>{data.youtubeId ? "Klik untuk memutar di sini" : "Audio + Voiceover Siap"}</span>
                   </div>
                 </div>
               </div>

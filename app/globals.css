@@ -187,6 +187,10 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #34b38a; box-shadow: 0 0 0 2.5px rgba(52, 179, 138, .25); animation: dot-pulse 2s infinite ease-in-out; }
 @keyframes dot-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: .8; } }
 .video-card-body { flex: 1; display: flex; flex-direction: column; }
+.actual-video { position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; border: 0; background: #102621; }
+.hero-video-thumbnail { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: .52; }
+.video-poster-art:has(.hero-video-thumbnail)::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,25,21,.12), rgba(7,25,21,.62)); }
+.video-poster-art:has(.hero-video-thumbnail) .poster-content { z-index: 3; }
 .portrait-video-frame { position: relative; width: 100%; aspect-ratio: 9 / 15.6; background: linear-gradient(165deg, #18332c 0%, #102621 55%, #141f1c 100%); border: 1.5px solid #2d554a; border-radius: 18px; box-shadow: 0 16px 36px rgba(10, 28, 23, .35); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 9px 8px; color: white; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; cursor: pointer; }
 .portrait-video-frame:hover, .portrait-video-frame:focus-visible { transform: translateY(-3px) scale(1.01); border-color: #498274; box-shadow: 0 22px 48px rgba(10, 28, 23, .42); }
 .frame-topbar { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 3; }

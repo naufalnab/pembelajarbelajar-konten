@@ -34,6 +34,7 @@ export interface HeroDemoData {
     ratio: string;
     duration: string;
     outputLabel: string;
+    youtubeId?: string;
     videoSrc?: string;
     posterSrc?: string;
   };
@@ -87,6 +88,7 @@ export const heroDemoData: HeroDemoData = {
     ratio: "9:16",
     duration: "±0:28",
     outputLabel: "Final video",
+    youtubeId: "EeCGzUFX_HI",
     videoSrc: undefined,
     posterSrc: undefined,
   },
