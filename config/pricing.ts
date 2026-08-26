@@ -8,10 +8,10 @@ export interface PricingPlan {
   name: string;
   price: string;
   priceSuffix?: string;
-  description: string;
-  features: readonly string[];
-  duration?: string;
+  volume: string;
   cadence?: string;
+  targetAudience: string;
+  features: readonly string[];
   ctaLabel: string;
   ctaMessageKey: CtaMessageKey;
   ctaMessage: string;
@@ -25,21 +25,14 @@ export const pricingPlans: readonly PricingPlan[] = [
     badge: "Coba Dulu",
     name: "AI Content Trial",
     price: "Rp1,25 juta",
-    description:
-      "Untuk brand yang ingin mencoba workflow sebelum masuk produksi bulanan.",
+    volume: "3 video",
+    targetAudience: "Untuk mencoba workflow sebelum produksi rutin.",
     features: [
-      "3 short-form video",
-      "Ide & angle",
-      "Script",
-      "Storyboard sederhana",
-      "AI-assisted visual production",
-      "Editing",
-      "Caption",
-      "Format final 9:16",
-      "Maksimal 2 putaran revisi minor",
+      "Ide + hook",
+      "Script + storyboard",
+      "Visual + editing",
+      "Caption siap posting",
     ],
-    duration:
-      "±20–60 detik/video, tergantung kebutuhan cerita dan kompleksitas.",
     ctaLabel: "Coba 3 Video",
     ctaMessageKey: "trial",
     ctaMessage: ctaMessages.trial,
@@ -52,23 +45,15 @@ export const pricingPlans: readonly PricingPlan[] = [
     name: "AI Content Factory",
     price: "Rp3,5 juta",
     priceSuffix: "/ bulan",
-    description:
-      "Untuk brand yang ingin membangun ritme konten rutin dengan workflow yang rapi.",
+    volume: "8 video / bulan",
+    cadence: "±2 video per minggu",
+    targetAudience: "Untuk brand yang ingin konsisten sekitar 2 video per minggu.",
     features: [
-      "8 short-form video / bulan",
       "Content direction bulanan",
-      "Ide & hook",
-      "Script",
-      "Storyboard",
-      "Visual direction",
-      "AI-assisted production",
-      "Editing",
-      "Caption",
-      "Consistency antarvideo",
-      "Maksimal 2 putaran revisi minor per batch/video sesuai workflow",
-      "Delivery siap posting",
+      "Script + storyboard",
+      "Visual direction konsisten",
+      "Editing + caption",
     ],
-    cadence: "Rata-rata ±2 video per minggu.",
     ctaLabel: "Mulai Produksi Bulanan",
     ctaMessageKey: "factory",
     ctaMessage: ctaMessages.factory,
@@ -77,33 +62,30 @@ export const pricingPlans: readonly PricingPlan[] = [
   },
   {
     id: "growth",
-    badge: "Untuk Produksi Lebih Aktif",
+    badge: "Volume Lebih Aktif",
     name: "AI Content Growth",
     price: "Rp5,5 juta",
     priceSuffix: "/ bulan",
-    description:
-      "Untuk brand yang membutuhkan volume produksi lebih aktif dan variasi angle lebih banyak.",
+    volume: "12 video / bulan",
+    targetAudience: "Untuk brand dengan ritme produksi lebih aktif.",
     features: [
-      "12 short-form video / bulan",
-      "Monthly content planning",
-      "Variasi angle lebih banyak",
-      "Script & storyboard",
-      "Visual direction",
-      "AI-assisted production",
-      "Editing",
-      "Caption",
-      "Consistency antarvideo",
-      "Prioritas produksi dibanding paket reguler",
-      "Opsi variasi hook untuk konten tertentu",
-      "Maksimal 2 putaran revisi minor",
+      "Semua proses Factory",
+      "Lebih banyak variasi angle",
+      "Prioritas produksi",
+      "Opsi variasi hook",
     ],
-    ctaLabel: "Diskusikan Paket Growth",
+    ctaLabel: "Diskusikan Growth",
     ctaMessageKey: "growth",
     ctaMessage: ctaMessages.growth,
     analyticsEvent: "cta_pricing_growth",
     recommended: false,
   },
 ];
+
+export const sharedScopeSummary = {
+  text: "Semua paket mencakup: short-form ±20–60 detik · format 9:16 · AI-assisted production · maksimal 2 putaran revisi minor",
+  linkText: "Lihat detail scope & revisi",
+} as const;
 
 export const pricingDisclaimer =
   "Paket dirancang untuk short-form storytelling dengan tingkat kompleksitas produksi normal. Kebutuhan khusus seperti durasi panjang, banyak karakter, rendering kompleks, versi bahasa tambahan, atau produksi dengan scope berbeda akan dibicarakan terlebih dahulu.";

@@ -364,30 +364,51 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
 
 /* Pricing */
 .pricing-section { background: linear-gradient(180deg, #f2f4ed, var(--background)); }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 16px; }
-.pricing-card { position: relative; min-width: 0; display: flex; flex-direction: column; padding: 31px 28px 28px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-sm); }
-.pricing-card.is-recommended { color: white; border-color: var(--brand); background: var(--brand); box-shadow: 0 30px 80px rgba(18,63,57,.21); transform: translateY(-9px); }
-.recommended-corner { position: absolute; top: 18px; right: 18px; display: flex; align-items: center; gap: 5px; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; font-size: .51rem; font-weight: 850; }
-.price-badge { width: fit-content; margin: 0 0 20px; padding: 5px 8px; border-radius: 999px; color: var(--brand-mid); background: var(--brand-soft); text-transform: uppercase; letter-spacing: .08em; font-size: .53rem; font-weight: 850; }
-.is-recommended .price-badge { color: #ffe5a8; background: rgba(217,164,74,.15); }
-.pricing-card h3 { margin: 0; font-size: 1.24rem; letter-spacing: -.035em; }
-.price-description { min-height: 63px; margin: 10px 0 20px; color: var(--muted); font-size: .71rem; line-height: 1.52; }
-.is-recommended .price-description { color: rgba(255,255,255,.59); }
-.price { display: flex; align-items: baseline; gap: 6px; margin: 0 0 21px; }
-.price strong { font-size: clamp(1.72rem, 2.8vw, 2.35rem); line-height: 1; letter-spacing: -.055em; }
-.price span { color: var(--muted); font-size: .67rem; font-weight: 650; }
-.is-recommended .price span { color: rgba(255,255,255,.55); }
-.cadence { width: fit-content; margin: -10px 0 19px; padding: 6px 8px; border-radius: 7px; color: #d4f4e8; background: rgba(255,255,255,.07); font-size: .58rem; font-weight: 700; }
-.pricing-card ul { list-style: none; display: grid; gap: 9px; margin: 0 0 26px; padding: 20px 0 0; border-top: 1px solid var(--border); }
-.is-recommended ul { border-color: rgba(255,255,255,.13); }
-.pricing-card li { display: flex; align-items: flex-start; gap: 8px; color: #4c5954; font-size: .68rem; line-height: 1.45; }
-.pricing-card li svg { flex: none; margin-top: 2px; color: var(--brand-mid); }
-.is-recommended li { color: rgba(255,255,255,.72); }.is-recommended li svg { color: #8ed0bd; }
-.duration { margin: auto 0 16px; color: var(--muted); font-size: .6rem; line-height: 1.5; }
-.duration strong { color: #45534e; }
-.pricing-card .cta-link { width: 100%; margin-top: auto; padding-inline: 12px; font-size: .73rem; }
-.is-recommended .cta-primary { color: var(--brand); border-color: var(--accent); background: var(--accent); box-shadow: 0 15px 35px rgba(0,0,0,.15); }
-.pricing-disclaimer { max-width: 900px; margin: 28px auto 0; color: var(--muted); text-align: center; font-size: .66rem; line-height: 1.6; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 18px; }
+.pricing-card { position: relative; min-width: 0; display: flex; flex-direction: column; padding: 28px 24px 24px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease; }
+.pricing-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.pricing-card.is-recommended { color: white; border-color: var(--brand); background: var(--brand); box-shadow: 0 26px 70px rgba(18,63,57,.22); transform: translateY(-7px); }
+.pricing-card.is-recommended:hover { transform: translateY(-10px); box-shadow: 0 32px 85px rgba(18,63,57,.28); }
+.recommended-corner { position: absolute; top: 16px; right: 18px; display: flex; align-items: center; gap: 5px; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; font-size: .52rem; font-weight: 850; }
+.price-badge { width: fit-content; margin: 0 0 14px; padding: 4px 9px; border-radius: 999px; color: var(--brand-mid); background: var(--brand-soft); text-transform: uppercase; letter-spacing: .08em; font-size: .53rem; font-weight: 850; }
+.is-recommended .price-badge { color: #ffe5a8; background: rgba(217,164,74,.18); }
+.pricing-card h3 { margin: 0 0 14px; font-size: 1.25rem; letter-spacing: -.035em; }
+
+.price-header-block { margin-bottom: 12px; }
+.price { display: flex; align-items: baseline; gap: 5px; margin: 0 0 5px; }
+.price strong { font-size: clamp(1.7rem, 2.6vw, 2.3rem); line-height: 1; letter-spacing: -.05em; }
+.price span { color: var(--muted); font-size: .72rem; font-weight: 650; }
+.is-recommended .price span { color: rgba(255,255,255,.6); }
+.price-volume { margin: 0; display: flex; align-items: center; gap: 6px; }
+.volume-tag { display: inline-block; padding: 2px 7px; border-radius: 6px; background: rgba(18, 63, 57, .08); color: var(--brand); font-size: .64rem; font-weight: 800; letter-spacing: .01em; }
+.is-recommended .volume-tag { background: rgba(217, 164, 74, .2); color: #ffd88a; }
+.cadence-tag { color: var(--muted); font-size: .62rem; font-weight: 600; }
+.is-recommended .cadence-tag { color: rgba(255,255,255,.65); }
+
+.price-target { margin: 0 0 18px; color: #52615c; font-size: .73rem; line-height: 1.45; font-style: italic; min-height: 38px; }
+.is-recommended .price-target { color: rgba(255,255,255,.78); }
+
+.price-features { list-style: none; display: grid; gap: 8px; margin: 0 0 22px; padding: 16px 0 0; border-top: 1px solid var(--border); }
+.is-recommended .price-features { border-color: rgba(255,255,255,.14); }
+.price-features li { display: flex; align-items: center; gap: 7px; color: #3d4c47; font-size: .72rem; font-weight: 650; line-height: 1.4; }
+.price-features li svg { flex: none; color: var(--brand-mid); }
+.is-recommended .price-features li { color: rgba(255,255,255,.88); }
+.is-recommended .price-features li svg { color: #59d1ad; }
+
+.pricing-card .cta-link { width: 100%; margin-top: auto; padding-inline: 14px; font-size: .78rem; font-weight: 780; }
+.is-recommended .cta-primary { color: var(--brand); border-color: var(--accent); background: var(--accent); box-shadow: 0 14px 32px rgba(0,0,0,.18); }
+.is-recommended .cta-primary:hover { background: #e8b359; }
+
+/* Shared Scope Strip */
+.pricing-scope-strip { margin-top: 24px; padding: 14px 20px; border: 1px solid rgba(18, 63, 57, .14); border-radius: var(--radius-md); background: rgba(255, 255, 255, .85); box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.scope-strip-main { display: flex; align-items: center; gap: 9px; flex: 1; min-width: 260px; }
+.scope-strip-bullet { color: var(--accent); font-size: .85rem; flex-shrink: 0; }
+.scope-strip-text { margin: 0; color: #384a44; font-size: .75rem; line-height: 1.5; }
+.scope-strip-text strong { color: var(--brand); font-weight: 800; }
+.scope-strip-link { display: inline-flex; align-items: center; gap: 4px; color: var(--brand); text-decoration: underline; text-underline-offset: 3px; font-size: .73rem; font-weight: 780; white-space: nowrap; transition: color .18s ease; }
+.scope-strip-link:hover { color: var(--brand-mid); }
+
+.pricing-disclaimer { max-width: 900px; margin: 20px auto 0; color: var(--muted); text-align: center; font-size: .66rem; line-height: 1.6; }
 
 /* Scope & safety */
 .scope-safety-section { padding-top: 38px; background: var(--background); }
@@ -540,7 +561,8 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
   .portfolio-media, .portfolio-card:nth-child(even) .portfolio-media { min-height: 520px; border: 0; border-top: 1px solid var(--border); }
   .pricing-grid { grid-template-columns: 1fr; max-width: 680px; margin-inline: auto; gap: 18px; }
   .pricing-card.is-recommended { order: -1; transform: none; }
-  .price-description { min-height: 0; }
+  .price-target { min-height: 0; }
+  .pricing-scope-strip { padding: 14px 16px; flex-direction: column; align-items: flex-start; gap: 10px; }
   .scope-safety-grid { grid-template-columns: 1fr; }
   .onboarding-steps { grid-template-columns: repeat(2, 1fr); }
   .faq-layout { grid-template-columns: 1fr; gap: 45px; }
