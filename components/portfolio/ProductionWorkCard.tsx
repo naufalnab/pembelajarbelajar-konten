@@ -22,15 +22,22 @@ function InstagramIcon({ size = 32 }: { size?: number }) {
   );
 }
 
-export function ProductionWorkCard({ item }: { item: PortfolioWork }) {
+export function ProductionWorkCard({
+  item,
+  variant = "default",
+}: {
+  item: PortfolioWork;
+  variant?: "default" | "compact";
+}) {
   const isWide = item.aspectRatio === "16:9" || item.format === "long-form";
   const isInstagram = Boolean(item.instagramUrl);
+  const isCompact = variant === "compact";
 
   return (
     <article
       className={`work-item-card ${isWide ? "is-wide-card" : "is-portrait-card"} ${
         item.isFeatured ? "is-featured-work" : ""
-      }`}
+      } ${isCompact ? "is-compact-work" : ""}`}
       data-category={item.category}
     >
       {/* Media / Video Preview */}

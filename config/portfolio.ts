@@ -32,6 +32,7 @@ export interface PortfolioWork {
   videoSrc?: string;
   posterSrc?: string;
   isFeatured?: boolean;
+  isStrongProof?: boolean;
   isDemo?: boolean;
   hidden?: boolean;
   episodes?: readonly PortfolioEpisode[];
@@ -133,6 +134,7 @@ export const realProductionWorks: readonly PortfolioWork[] = [
     description:
       "Enam konten dengan tema berbeda tetapi tetap mempertahankan visual direction dan identitas serial yang konsisten.",
     isFeatured: true,
+    isStrongProof: true,
     aspectRatio: "9:16",
     episodes: [
       {
@@ -235,8 +237,9 @@ export const realProductionWorks: readonly PortfolioWork[] = [
     youtubeId: "e66-GX7yM9g",
     url: "https://youtu.be/e66-GX7yM9g",
     description:
-      "Produksi video panjang dengan visual storytelling yang dipertahankan sepanjang rangkaian materi.",
+      "Produksi materi panjang dengan continuity visual dari awal hingga akhir.",
     isFeatured: true,
+    isStrongProof: true,
     aspectRatio: "16:9",
   },
   {
@@ -278,8 +281,9 @@ export const realProductionWorks: readonly PortfolioWork[] = [
     youtubeId: "2pQ62bTjaNU",
     url: "https://youtube.com/shorts/2pQ62bTjaNU",
     description:
-      "Contoh visual storytelling untuk produk fisik dan komunikasi komersial.",
+      "Visual storytelling untuk produk fisik dalam format short-form.",
     isFeatured: true,
+    isStrongProof: true,
     aspectRatio: "9:16",
   },
   {
@@ -306,10 +310,11 @@ export const realProductionWorks: readonly PortfolioWork[] = [
     formatLabel: "Original Series",
     badge: "ORIGINAL SERIES",
     description:
-      "Serial storytelling dengan workflow karakter, visual direction, storyboard, dan continuity antarepisode.",
+      "Serial storytelling dengan visual direction, storyboard, dan continuity antarepisode.",
     instagramUrl: "https://www.instagram.com/naufalnabila_",
     ctaLabel: "Lihat Series di Instagram",
     isFeatured: true,
+    isStrongProof: true,
     aspectRatio: "9:16",
   },
 

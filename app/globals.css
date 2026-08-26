@@ -371,11 +371,31 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
 .category-chip:hover { border-color: var(--brand-mid); color: var(--brand); background: white; }
 .category-chip.is-selected { background: var(--brand); color: white; border-color: var(--brand); box-shadow: 0 4px 12px rgba(18,63,57,.18); }
 
-/* Real Works Bento Grid */
-.real-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+/* Real Works Bento / Curated Grid */
+.curated-portfolio-wrapper { display: flex; flex-direction: column; gap: 24px; }
+.strong-proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.strong-proof-grid .series-case-card { grid-column: span 1; }
+.strong-proof-grid .work-item-card.is-wide-card { grid-column: span 1; }
+
+.category-works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.category-works-grid .series-case-card { grid-column: span 2; }
+.category-works-grid .work-item-card.is-wide-card { grid-column: span 2; }
+
+/* Progressive Reveal & Supporting Works */
+.supporting-works-disclosure { display: flex; flex-direction: column; align-items: center; gap: 22px; width: 100%; }
+.portfolio-reveal-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border: 1.5px solid rgba(18,63,57,.16); border-radius: 999px; background: rgba(255,255,255,.9); color: var(--brand); font-size: .76rem; font-weight: 800; cursor: pointer; transition: all .2s ease; box-shadow: var(--shadow-sm); }
+.portfolio-reveal-btn:hover { background: var(--brand-soft); border-color: var(--brand); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.portfolio-reveal-btn.is-active { background: var(--brand); color: white; border-color: var(--brand); }
+
+.supporting-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; animation: modal-enter .25s ease both; }
+.work-item-card.is-compact-work { border-radius: var(--radius-md); box-shadow: 0 4px 12px rgba(18,63,57,.06); }
+.work-item-card.is-compact-work .work-card-media { height: 210px; }
+.work-item-card.is-compact-work .work-card-body { padding: 14px 16px; }
+.work-item-card.is-compact-work .work-card-title { font-size: .94rem; margin-bottom: 5px; }
+.work-item-card.is-compact-work .work-card-description { font-size: .67rem; line-height: 1.45; margin-bottom: 10px; }
 
 /* Series Card (Les Bahasa Arab) */
-.series-case-card { grid-column: span 2; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr); gap: 20px; padding: 26px; border: 1px solid rgba(18,63,57,.14); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease; }
+.series-case-card { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(200px, 0.85fr); gap: 18px; padding: 24px; border: 1px solid rgba(18,63,57,.14); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease; }
 .series-case-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .series-card-info { display: flex; flex-direction: column; justify-content: space-between; }
 .series-header-badge { display: flex; align-items: center; gap: 7px; margin-bottom: 12px; }
@@ -405,7 +425,6 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
 /* Standard Production Work Card */
 .work-item-card { min-width: 0; display: flex; flex-direction: column; border: 1px solid rgba(18,63,57,.14); border-radius: var(--radius-lg); background: var(--surface); box-shadow: var(--shadow-sm); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
 .work-item-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.work-item-card.is-wide-card { grid-column: span 2; }
 .work-card-media { position: relative; width: 100%; background: #122923; overflow: hidden; display: flex; justify-content: center; }
 .is-portrait-card .work-card-media { height: 260px; }
 .is-wide-card .work-card-media { height: 260px; }
@@ -699,14 +718,16 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
   .material-flow { grid-template-columns: 1fr; }
   .flow-connector { min-height: 50px; }
   .flow-connector span { width: 1px; height: 50px; background: repeating-linear-gradient(to bottom, #9da9a4 0 5px, transparent 5px 10px); }
-  .flow-connector b { transform: rotate(90deg); }
   .featured-case-card { grid-template-columns: 1fr; }
   .featured-case-media { border-left: 0; border-top: 1px solid var(--border); padding: 32px 20px; min-height: 380px; }
   .featured-video-frame { width: min(210px, 80%); }
   .featured-process-list { grid-template-columns: repeat(2, 1fr); }
-  .real-works-grid { grid-template-columns: 1fr; }
-  .series-case-card { grid-column: span 1; grid-template-columns: 1fr; }
-  .work-item-card.is-wide-card { grid-column: span 1; }
+  .strong-proof-grid { grid-template-columns: 1fr; }
+  .supporting-works-grid { grid-template-columns: repeat(2, 1fr); }
+  .category-works-grid { grid-template-columns: 1fr; }
+  .category-works-grid .series-case-card { grid-column: span 1; }
+  .category-works-grid .work-item-card.is-wide-card { grid-column: span 1; }
+  .series-case-card { grid-template-columns: 1fr; }
   .range-cta-box { flex-direction: column; align-items: flex-start; gap: 12px; }
   .pricing-card[data-plan="factory"] { order: 1; transform: none; }
   .pricing-card[data-plan="trial"] { order: 2; }
@@ -779,8 +800,10 @@ p, h1, h2, h3, blockquote { overflow-wrap: break-word; }
   .featured-process-list { grid-template-columns: 1fr; }
   .category-chips-wrapper { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
   .category-chip { white-space: nowrap; flex-shrink: 0; }
+  .supporting-works-grid { grid-template-columns: 1fr; }
   .is-portrait-card .work-card-media { height: 280px; }
   .is-wide-card .work-card-media { height: 200px; }
+  .work-item-card.is-compact-work .work-card-media { height: 230px; }
   .series-episodes-grid { grid-template-columns: repeat(2, 1fr); }
   .series-visual-stack { padding: 12px 6px; }
   .stack-frames-container { height: 145px; }
