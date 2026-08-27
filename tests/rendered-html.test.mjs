@@ -35,7 +35,7 @@ test("server-rendered homepage contains the complete conversion path", async () 
   assert.match(html, /wa\.me\/6282328591004/);
   assert.doesNotMatch(html, /trusted by|100\+ klien|10M views|pasti viral/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
-  assert.ok(html.indexOf("Lihat bagaimana satu topik berubah menjadi cerita") < html.indexOf("Bahan Anda sebenarnya sudah ada"));
+  assert.ok(html.indexOf("Lihat bagaimana satu topik berubah menjadi cerita") < html.indexOf("Bahan Anda sudah cukup untuk mulai"));
 });
 
 test("SEO routes render", async () => {
