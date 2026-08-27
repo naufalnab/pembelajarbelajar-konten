@@ -14,7 +14,7 @@ export function HeroSection() {
             <span aria-hidden="true" /> AI Content Factory · Pembelajar Belajar
           </p>
           <h1 id="hero-title">
-            Punya ide. <em>Kami ubah</em> jadi konten siap posting.
+            Punya ide? <em>Kami ubah</em> jadi konten siap posting.
           </h1>
           <p className="hero-lead">
             Dari ide, script, storyboard, visual, sampai video final. AI Content Factory membantu brand menghasilkan short-form storytelling tanpa harus membangun tim produksi sendiri.

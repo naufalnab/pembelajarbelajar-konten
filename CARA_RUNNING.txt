@@ -1,0 +1,42 @@
+CARA MENJALANKAN PROJECT
+========================
+
+Persyaratan:
+- Node.js versi 22.13.0 atau lebih baru
+- npm
+
+1. Buka Terminal, lalu masuk ke folder project:
+
+   cd /Users/mac/Documents/pembelajarbelajar/Konten/pembelajarbelajar-konten
+
+2. Install seluruh dependency (cukup dilakukan saat pertama kali atau setelah
+   dependency berubah):
+
+   npm install
+
+3. Buat file environment lokal:
+
+   cp .env.example .env.local
+
+   Opsional: buka .env.local untuk mengisi nomor WhatsApp dan email. Nomor
+   WhatsApp memakai format internasional angka saja, misalnya 628123456789.
+
+4. Jalankan server development:
+
+   npm run dev
+
+5. Buka alamat lokal yang tampil di Terminal (biasanya http://localhost:3000).
+
+Untuk menghentikan server, tekan Ctrl + C di Terminal.
+
+PERINTAH TAMBAHAN
+-----------------
+
+- Cek error kode:        npm run lint
+- Cek TypeScript:        npm run typecheck
+- Build production:      npm run build
+- Jalankan hasil build:  npm run start
+- Jalankan seluruh tes:  npm test
+
+Jika perintah `node` atau `npm` tidak ditemukan, install/update Node.js ke
+versi 22.13.0 atau lebih baru, lalu tutup dan buka kembali Terminal.
