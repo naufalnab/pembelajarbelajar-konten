@@ -24,7 +24,8 @@ test("server-rendered homepage contains the complete conversion path", async () 
   assert.match(html, /Kirim topik, link, atau bahan mentah/);
   assert.match(html, /Kirim satu topik/);
   assert.match(html, /Lihat contoh hasil/);
-  assert.match(html, /Demo Konsep/);
+  assert.match(html, /Contoh Video/);
+  assert.match(html, /i\.ytimg\.com\/vi\/EeCGzUFX_HI/);
   assert.match(html, /AI Content Consultation/);
   assert.match(html, /Mulai Rp200 ribu/);
   assert.match(html, /Mulai Rp450 ribu/);

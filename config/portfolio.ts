@@ -55,6 +55,7 @@ export interface FeaturedDemoCase {
     description: string;
   }[];
   description: string;
+  youtubeId?: string;
   videoSrc?: string;
   posterSrc?: string;
   placeholderTitle: string;
@@ -70,7 +71,7 @@ export interface FeaturedDemoCase {
  */
 export const featuredDemoCase: FeaturedDemoCase = {
   id: "sekolah-featured",
-  badge: "Demo Konsep",
+  badge: "Contoh Video",
   categoryLabel: "DEMO UTAMA · EDUKASI",
   title: "Kenapa Anak Takut Salah Saat Belajar?",
   topicInput: "Membangun keberanian anak saat proses belajar.",
@@ -100,6 +101,7 @@ export const featuredDemoCase: FeaturedDemoCase = {
   ],
   description:
     "Topik edukasi sekolah yang diolah dari identifikasi masalah, perumusan angle, pembuatan hook emosional, storyboard visual, hingga video vertikal 9:16 siap posting.",
+  youtubeId: "EeCGzUFX_HI",
   videoSrc: undefined, // Diisi path video saat asset selesai disiapkan (misal "/videos/hero-demo-sekolah.mp4")
   posterSrc: undefined,
   placeholderTitle: "Berani Mencoba",

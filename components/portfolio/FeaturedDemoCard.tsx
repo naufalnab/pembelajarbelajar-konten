@@ -17,7 +17,7 @@ export function FeaturedDemoCard({ item }: { item: FeaturedDemoCase }) {
   }, [showDemoModal]);
 
   const handlePlayClick = () => {
-    if (item.videoSrc) {
+    if (item.videoSrc || item.youtubeId) {
       setIsPlaying(true);
     } else {
       setShowDemoModal(true);
@@ -91,7 +91,15 @@ export function FeaturedDemoCard({ item }: { item: FeaturedDemoCase }) {
               <span className="duration-tag">{item.duration}</span>
             </div>
 
-            {item.videoSrc && isPlaying ? (
+            {item.youtubeId && isPlaying ? (
+              <iframe
+                className="featured-actual-video"
+                src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&playsinline=1&rel=0`}
+                title={`Video: ${item.title}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : item.videoSrc && isPlaying ? (
               <video
                 controls
                 autoPlay
@@ -106,6 +114,10 @@ export function FeaturedDemoCard({ item }: { item: FeaturedDemoCase }) {
               </video>
             ) : (
               <div className="featured-poster-art">
+                {item.youtubeId && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className="featured-video-thumbnail" src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`} alt={`Thumbnail video ${item.title}`} />
+                )}
                 <div className="poster-art-backdrop" aria-hidden="true">
                   <div className="art-shape shape-1" />
                   <div className="art-shape shape-2" />
@@ -115,7 +127,7 @@ export function FeaturedDemoCard({ item }: { item: FeaturedDemoCase }) {
                 <div className="poster-art-content">
                   <span className="poster-tag">
                     <Sparkles size={11} aria-hidden="true" />
-                    <span>Storytelling Edukasi</span>
+                    <span>{item.youtubeId ? "Tonton contoh video" : "Storytelling Edukasi"}</span>
                   </span>
                   <h4 className="poster-heading">{item.placeholderTitle}</h4>
                   <p className="poster-subtext">{item.placeholderSubtitle}</p>
