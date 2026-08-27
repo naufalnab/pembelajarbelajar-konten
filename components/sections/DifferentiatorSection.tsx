@@ -2,10 +2,10 @@ import { CheckCheck, Clapperboard, PanelsTopLeft, ScanLine } from "lucide-react"
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const benefits = [
-  { title: "Story First", description: "AI mengikuti cerita, bukan cerita mengikuti hasil random AI.", Icon: Clapperboard },
-  { title: "Visual Consistency", description: "Style, karakter, environment, dan brand direction dijaga antarkonten.", Icon: ScanLine },
-  { title: "Approval Sebelum Produksi", description: "Script dan arah visual disetujui sebelum proses render yang lebih berat.", Icon: CheckCheck },
-  { title: "Ready to Publish", description: "Output disiapkan dalam format short-form vertikal, lengkap dengan caption.", Icon: PanelsTopLeft },
+  { title: "Cerita yang siap dibawakan", description: "Anda tidak perlu menyusun angle, hook, dan alur dari nol.", Icon: Clapperboard },
+  { title: "Visual mengikuti cerita", description: "Arah visual, karakter, dan gaya disusun agar pesannya tetap konsisten.", Icon: ScanLine },
+  { title: "Arah disetujui lebih dulu", description: "Anda meninjau script dan visual sebelum masuk ke produksi yang lebih berat.", Icon: CheckCheck },
+  { title: "Video dirapikan sampai siap posting", description: "Format vertikal, editing dasar, dan caption disiapkan untuk digunakan.", Icon: PanelsTopLeft },
 ];
 
 export function DifferentiatorSection() {

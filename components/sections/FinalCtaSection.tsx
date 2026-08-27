@@ -9,7 +9,7 @@ export function FinalCtaSection() {
         <div className="final-kicker"><span>Tidak harus langsung ambil paket.</span><i aria-hidden="true" /></div>
         <h2 id="final-cta-title">Punya satu topik?<br />Kirim saja dulu.</h2>
         <p>Ceritakan materi, produk, atau ide yang ingin Anda jadikan konten. Kita bisa mulai dengan melihat angle yang paling menarik untuk divisualisasikan.</p>
-        <div><CtaLink href={getWhatsAppUrl()} eventName="cta_final_whatsapp">Kirim 1 Topik via WhatsApp <ArrowUpRight size={17} aria-hidden="true" /></CtaLink><CtaLink href="#paket" variant="text">Lihat Paket <span aria-hidden="true">↑</span></CtaLink></div>
+        <div><CtaLink href={getWhatsAppUrl()} eventName="cta_final_whatsapp">Kirim satu topik <ArrowUpRight size={17} aria-hidden="true" /></CtaLink><CtaLink href="#contoh" variant="text">Lihat contoh hasil <span aria-hidden="true">↑</span></CtaLink></div>
         <small>Tidak perlu brief yang sempurna. Satu topik sudah cukup untuk memulai percakapan.</small>
       </div>
     </section>

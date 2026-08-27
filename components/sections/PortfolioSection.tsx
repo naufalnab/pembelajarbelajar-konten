@@ -57,9 +57,9 @@ export function PortfolioSection() {
         {/* Section Main Heading */}
         <SectionHeading
           id="portfolio-title"
-          eyebrow="Workflow & Hasil Produksi"
+          eyebrow="Contoh hasil"
           title="Lihat bagaimana satu topik berubah menjadi cerita."
-          description="Mulai dari demo alur transformasi hingga karya nyata yang sudah kami produksi untuk berbagai format dan topik."
+          description="Lihat input awal, cara kami mengolahnya, lalu output yang siap dipublikasikan—tanpa perlu membedah layar penuh teks kecil."
         />
 
         {/* Level 1: Featured Transformation Demo (Main Proof of Workflow) */}

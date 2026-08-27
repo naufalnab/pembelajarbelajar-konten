@@ -8,7 +8,7 @@ export function RevisionSection() {
   return (
     <section className="section revision-section" aria-labelledby="revision-title">
       <div className="container compact-container">
-        <SectionHeading id="revision-title" eyebrow="Scope yang transparan" title="Revisi dibuat jelas sejak awal." description="Approval per tahap membantu perubahan tetap ringan dan produksi berjalan sesuai arah." />
+        <SectionHeading id="revision-title" eyebrow="Revisi yang jelas" title="Belum cocok? Revisi minor sudah termasuk." description="Untuk Production dan Factory, maksimal dua putaran revisi minor mengikuti workflow produksi. Approval per tahap membantu perubahan tetap ringan." />
         <div className="revision-grid">
           <article className="minor-card">
             <span className="revision-icon"><RotateCcw size={20} aria-hidden="true" /></span><h3>Termasuk Revisi Minor</h3>

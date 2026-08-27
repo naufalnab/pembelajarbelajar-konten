@@ -1,12 +1,11 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const steps = [
-  ["01", "Ide", "Kami membantu menentukan angle dan hook."],
-  ["02", "Script", "Ide disusun menjadi cerita singkat yang jelas."],
-  ["03", "Storyboard", "Setiap scene direncanakan sebelum produksi."],
-  ["04", "Visual", "Kami membangun visual direction yang konsisten."],
-  ["05", "Production", "Storyboard diubah menjadi short-form video."],
-  ["06", "Final", "Video, caption, dan materi siap digunakan."],
+  ["01", "Punya topik", "Mulai dari ide, link, atau bahan yang sudah ada."],
+  ["02", "Kirim bahan", "Ceritakan pesan, tujuan, dan referensi yang Anda punya."],
+  ["03", "Kami olah", "Angle, script, storyboard, dan arah visual kami susun."],
+  ["04", "Review", "Anda menyetujui arah penting sebelum produksi."],
+  ["05", "Siap posting", "Video final dan caption disiapkan untuk digunakan."],
 ];
 
 export function SolutionSection() {
@@ -15,9 +14,9 @@ export function SolutionSection() {
       <div className="container">
         <SectionHeading
           id="solution-title"
-          eyebrow="Satu alur, dari awal sampai final"
-          title="Serahkan bahan mentahnya. Kami kerjakan alurnya."
-          description="Setiap tahap punya tujuan yang jelas agar produksi tidak bergantung pada hasil AI yang acak."
+          eyebrow="Alur yang sederhana"
+          title="Dari satu topik sampai video siap posting."
+          description="Satu alur yang jelas, dengan persetujuan pada tahap yang memang perlu Anda lihat."
         />
         <ol className="production-steps">
           {steps.map(([number, title, description], index) => (

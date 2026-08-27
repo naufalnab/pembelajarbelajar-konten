@@ -29,7 +29,7 @@ export function MobileNav() {
           data-cta-event="cta_mobile_menu"
           onClick={closeMenu}
         >
-          Kirim 1 Topik <span aria-hidden="true">↗</span>
+          Kirim satu topik <span aria-hidden="true">↗</span>
         </a>
       </nav>
     </details>

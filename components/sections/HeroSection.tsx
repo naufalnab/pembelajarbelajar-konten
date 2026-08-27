@@ -17,14 +17,14 @@ export function HeroSection() {
             Punya ide? <em>Kami ubah</em> jadi konten siap posting.
           </h1>
           <p className="hero-lead">
-            Dari ide, script, storyboard, visual, sampai video final. AI Content Factory membantu brand menghasilkan short-form storytelling tanpa harus membangun tim produksi sendiri.
+            Kirim topik, link, atau bahan mentah. Kami susun angle, script, visual, hingga video final yang siap Anda posting.
           </p>
           <div className="hero-actions">
             <CtaLink href={getWhatsAppUrl()} eventName="cta_hero_whatsapp">
-              Kirim 1 Topik <ArrowUpRight size={17} aria-hidden="true" />
+              Kirim satu topik <ArrowUpRight size={17} aria-hidden="true" />
             </CtaLink>
             <CtaLink href="#contoh" variant="text">
-              Lihat Contoh <ArrowDown size={16} aria-hidden="true" />
+              Lihat contoh hasil <ArrowDown size={16} aria-hidden="true" />
             </CtaLink>
           </div>
           <HeroMicroProof />

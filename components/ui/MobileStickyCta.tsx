@@ -22,7 +22,7 @@ export function MobileStickyCta() {
 
   return (
     <div className="mobile-sticky-cta is-visible">
-      <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" data-analytics-event="cta_mobile_sticky">Kirim 1 Topik <span aria-hidden="true">↗</span></a>
+      <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" data-analytics-event="cta_mobile_sticky">Kirim satu topik <span aria-hidden="true">↗</span></a>
     </div>
   );
 }

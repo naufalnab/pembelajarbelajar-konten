@@ -20,17 +20,21 @@ test("server-rendered homepage contains the complete conversion path", async () 
 
   const html = await response.text();
   assert.match(html, /AI Content Factory — Ubah Ide Jadi Konten/);
-  assert.match(html, /Punya ide\./);
+  assert.match(html, /Punya ide\?/);
+  assert.match(html, /Kirim topik, link, atau bahan mentah/);
+  assert.match(html, /Kirim satu topik/);
+  assert.match(html, /Lihat contoh hasil/);
   assert.match(html, /Demo Konsep/);
   assert.match(html, /AI Content Consultation/);
   assert.match(html, /Mulai Rp200 ribu/);
   assert.match(html, /Mulai Rp450 ribu/);
   assert.match(html, /Rp3,2 juta/);
-  assert.match(html, /Revisi dibuat jelas sejak awal/);
+  assert.match(html, /Belum cocok\? Revisi minor sudah termasuk/);
   assert.match(html, /Pertanyaan umum/);
   assert.match(html, /wa\.me\/6282328591004/);
   assert.doesNotMatch(html, /trusted by|100\+ klien|10M views|pasti viral/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
+  assert.ok(html.indexOf("Lihat bagaimana satu topik berubah menjadi cerita") < html.indexOf("Bahan Anda sebenarnya sudah ada"));
 });
 
 test("SEO routes render", async () => {

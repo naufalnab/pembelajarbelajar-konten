@@ -1,14 +1,13 @@
 import { Check } from "lucide-react";
 
 const desktopProofItems = [
-  "Script dulu",
-  "Storyboard dulu",
-  "Approve dulu",
-  "Baru produksi",
+  "Mulai Rp200 ribu",
+  "Script & storyboard dulu",
+  "Approve sebelum produksi",
 ] as const;
 
 const mobileProofItems = [
-  "Script & storyboard dulu",
+  "Mulai Rp200 ribu",
   "Approve sebelum produksi",
 ] as const;
 

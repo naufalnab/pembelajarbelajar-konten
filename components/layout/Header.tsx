@@ -16,7 +16,7 @@ export function Header() {
           {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
         <CtaLink href={getWhatsAppUrl()} eventName="cta_header_whatsapp" className="header-cta">
-          Kirim 1 Topik <ArrowUpRight size={15} aria-hidden="true" />
+          Kirim satu topik <ArrowUpRight size={15} aria-hidden="true" />
         </CtaLink>
         <MobileNav />
       </div>

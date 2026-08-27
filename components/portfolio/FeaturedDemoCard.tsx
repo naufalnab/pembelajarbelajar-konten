@@ -41,14 +41,18 @@ export function FeaturedDemoCard({ item }: { item: FeaturedDemoCase }) {
             {item.title}
           </h3>
 
+          <div className="case-flow-labels" aria-label="Alur contoh: input, proses, output">
+            <span>Input</span><i aria-hidden="true">→</i><span>Angle + script</span><i aria-hidden="true">→</i><span>Output</span>
+          </div>
+
           {/* Topik & Angle Block */}
           <div className="featured-context-grid">
             <div className="context-item">
-              <span className="context-label">Topik Awal</span>
+              <span className="context-label">Input · Topik awal</span>
               <p className="context-value">{item.topicInput}</p>
             </div>
             <div className="context-item">
-              <span className="context-label">Angle Pembahasan</span>
+              <span className="context-label">Kami olah · Angle</span>
               <p className="context-value">{item.angle}</p>
             </div>
           </div>
@@ -61,7 +65,7 @@ export function FeaturedDemoCard({ item }: { item: FeaturedDemoCase }) {
 
           {/* 4 Process Steps */}
           <div className="featured-process-box">
-            <span className="process-box-title">Alur Produksi</span>
+            <span className="process-box-title">Angle, script, dan arahan visual</span>
             <div className="featured-process-list">
               {item.processSteps.map((step) => (
                 <div key={step.step} className="process-step-item">
@@ -133,7 +137,7 @@ export function FeaturedDemoCard({ item }: { item: FeaturedDemoCase }) {
             <div className="frame-bottom-meta">
               <div className="delivery-indicator">
                 <Check size={13} className="delivery-check-icon" aria-hidden="true" />
-                <span>Final Video 9:16</span>
+                <span>Output · Final video 9:16</span>
               </div>
               <span className="demo-status-pill">{item.badge}</span>
             </div>
