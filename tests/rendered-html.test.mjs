@@ -40,3 +40,14 @@ test("SEO routes render", async () => {
   assert.match(await robots.text(), /sitemap\.xml/i);
   assert.match(await sitemap.text(), /konten\.pembelajarbelajar\.com/i);
 });
+
+test("internal roadmap renders separately and is noindex", async () => {
+  const response = await render("/roadmap");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Internal Roadmap/);
+  assert.match(html, /Dari produk siap jual sampai mesin pemasukan yang berjalan/);
+  assert.match(html, /Produk Siap Dijual/);
+  assert.match(html, /1 Desember 2026/);
+  assert.match(html, /noindex/);
+});
