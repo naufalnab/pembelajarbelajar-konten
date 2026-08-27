@@ -20,7 +20,7 @@ test("server-rendered homepage contains the complete conversion path", async () 
 
   const html = await response.text();
   assert.match(html, /AI Content Factory — Ubah Ide Jadi Konten/);
-  assert.match(html, /Punya ide\?/);
+  assert.match(html, /Punya satu topik\?/);
   assert.match(html, /Kirim topik, link, atau bahan mentah/);
   assert.match(html, /Kirim satu topik/);
   assert.match(html, /Lihat contoh hasil/);

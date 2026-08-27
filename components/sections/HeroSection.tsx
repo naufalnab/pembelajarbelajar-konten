@@ -14,7 +14,9 @@ export function HeroSection() {
             <span aria-hidden="true" /> AI Content Factory · Pembelajar Belajar
           </p>
           <h1 id="hero-title">
-            Punya ide? <em>Kami ubah</em> jadi konten siap posting.
+            <span className="hero-title-line">Punya satu topik?</span>{" "}
+            <span className="hero-title-line">Kami ubah jadi konten</span>{" "}
+            <em>siap posting.</em>
           </h1>
           <p className="hero-lead">
             Kirim topik, link, atau bahan mentah. Kami susun angle, script, visual, hingga video final yang siap Anda posting.
