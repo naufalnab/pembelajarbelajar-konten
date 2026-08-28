@@ -42,18 +42,23 @@ function MilestoneCard({ milestone, date, completed, onToggle, initialOpen, chec
 }
 
 export function RoadmapDashboard() {
-  const [state, setState] = useState<LocalState>(() => {
-    if (typeof window === "undefined") return { completedTaskIds: [] };
-    try {
-      const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || "{}");
-      return Array.isArray(saved.completedTaskIds)
-        ? { completedTaskIds: saved.completedTaskIds, actualRevenue: typeof saved.actualRevenue === "number" ? saved.actualRevenue : undefined }
-        : { completedTaskIds: [] };
-    } catch { return { completedTaskIds: [] }; }
-  });
-  const [date] = useState<string>(() => todayIso());
-  const [revenueInput, setRevenueInput] = useState(() => state.actualRevenue ? String(state.actualRevenue) : "");
-  useEffect(() => { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }, [state]);
+  const [state, setState] = useState<LocalState>({ completedTaskIds: [] });
+  const [date, setDate] = useState<string | null>(null);
+  const [revenueInput, setRevenueInput] = useState("");
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setDate(todayIso());
+      try {
+        const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || "{}");
+        if (Array.isArray(saved.completedTaskIds)) {
+          setState({ completedTaskIds: saved.completedTaskIds, actualRevenue: typeof saved.actualRevenue === "number" ? saved.actualRevenue : undefined });
+          setRevenueInput(saved.actualRevenue ? String(saved.actualRevenue) : "");
+        }
+      } catch { /* Empty local state is safe. */ }
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+  useEffect(() => { if (date) window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }, [state, date]);
   const completed = useMemo(() => new Set(state.completedTaskIds), [state.completedTaskIds]);
   const allMilestones = [...roadmapMilestones, checkpointMilestone];
   const taskCount = allMilestones.reduce((sum, item) => sum + item.tasks.length, 0);
