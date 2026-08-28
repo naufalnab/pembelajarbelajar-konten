@@ -301,6 +301,49 @@ export const realProductionWorks: readonly PortfolioWork[] = [
       "Eksplorasi visualisasi produk fisik dengan pencahayaan dan detail material terarah.",
     aspectRatio: "9:16",
   },
+  {
+    id: "faceless-martial-arts",
+    title: "Faceless Martial Arts — AI Generated",
+    category: "original",
+    categoryLabel: "Original Series",
+    format: "long-form",
+    formatLabel: "AI Visual Experiment",
+    badge: "AI GENERATED",
+    duration: "Video",
+    youtubeId: "F0VwaMv0870",
+    url: "https://www.youtube.com/watch?v=F0VwaMv0870",
+    description:
+      "Eksperimen visual AI dengan arah gerak dan suasana sinematik untuk storytelling tanpa talent tampil di kamera.",
+    aspectRatio: "16:9",
+  },
+  {
+    id: "darion",
+    title: "Darion",
+    category: "original",
+    categoryLabel: "Original Series",
+    format: "short-form",
+    formatLabel: "Creative Short-form",
+    badge: "AI GENERATED",
+    youtubeId: "SpcyvMwLlBI",
+    url: "https://youtube.com/shorts/SpcyvMwLlBI",
+    description:
+      "Eksplorasi karakter dan visual AI dalam format vertikal singkat.",
+    aspectRatio: "9:16",
+  },
+  {
+    id: "miniature-motor",
+    title: "Hands Assembling Miniature Motor",
+    category: "commercial",
+    categoryLabel: "Produk / Commercial",
+    format: "short-form",
+    formatLabel: "Product Visualization",
+    badge: "PRODUCT VISUAL",
+    youtubeId: "0Xgz9IvajSM",
+    url: "https://youtube.com/shorts/0Xgz9IvajSM",
+    description:
+      "Visualisasi detail proses perakitan produk mini dalam format short-form.",
+    aspectRatio: "9:16",
+  },
 
   // --- Category: Original Series ---
   {
