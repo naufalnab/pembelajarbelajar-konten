@@ -7,5 +7,15 @@ services:
       NODE_ENV: production
       PORT: "3000"
       NEXT_PUBLIC_SITE_URL: https://konten.pembelajarbelajar.com
+    labels:
+      com.centurylinklabs.watchtower.enable: "true"
     ports:
       - "3010:3000"
+
+  watchtower:
+    image: containrrr/watchtower:1.7.1
+    container_name: pembelajarbelajar-konten-updater
+    restart: unless-stopped
+    command: --label-enable --interval 300 --cleanup
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
