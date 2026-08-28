@@ -1,0 +1,11 @@
+services:
+  konten:
+    image: ghcr.io/naufalnab/pembelajarbelajar-konten:latest
+    container_name: pembelajarbelajar-konten
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      NEXT_PUBLIC_SITE_URL: https://konten.pembelajarbelajar.com
+    ports:
+      - "3010:3000"
