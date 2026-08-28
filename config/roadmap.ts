@@ -74,8 +74,42 @@ export const checkpointMilestone: RoadmapMilestone = {
   successCriteria: ["Desember digunakan untuk menjalankan mesin yang sudah dibangun dan mengejar sisa target menuju ≥ Rp50 juta."],
 };
 
+export const confirmedCompletedTaskIds: readonly string[] = [
+  // M1 — Produk Siap Dijual (15/15 confirmed completed)
+  "m1-1",  // Landing page konten.pembelajarbelajar.com production-ready
+  "m1-2",  // Hero Topik → Story → Video selesai
+  "m1-3",  // Featured Demo tersedia
+  "m1-4",  // Karya Produksi dikurasi
+  "m1-5",  // Model pricing final diterapkan
+  "m1-6",  // AI Content Consultation tersedia
+  "m1-7",  // AI Video Production tersedia
+  "m1-8",  // AI Content Factory tersedia
+  "m1-9",  // Revision policy tersedia
+  "m1-10", // Workflow produksi terlihat jelas
+  "m1-11", // FAQ sudah selaras dengan service model baru
+  "m1-12", // CTA WhatsApp berfungsi
+  "m1-13", // Mobile responsive sudah dicek
+  "m1-14", // Production build berhasil
+  "m1-15", // Website sudah deploy
+
+  // M2 — Featured Demo Sekolah (6 tasks confirmed completed)
+  "m2-1",  // Video ‘Kenapa Anak Takut Salah Saat Belajar?’ final
+  "m2-2",  // Video MP4 9:16 siap
+  "m2-3",  // Poster / thumbnail tersedia
+  "m2-4",  // Video masuk hero
+  "m2-5",  // Video masuk Featured Demo
+  "m2-6",  // Breakdown Topik → Story → Final tersedia
+
+  // M2 — Portfolio Karya Nyata (4 tasks confirmed completed)
+  "m2-7",  // Les Bahasa Arab tampil sebagai bukti series consistency
+  "m2-8",  // Tata Cara Umroh 14:42 tampil sebagai long-form proof
+  "m2-9",  // Teh Hijau 134 tampil sebagai commercial proof
+  "m2-10", // Asmaul Husna Series tampil sebagai original-series proof
+];
+
 export const financialCheckpoints = [
   ["30 September", "Rp5–8 juta"], ["31 Oktober", "Rp17–22 juta"], ["30 November", "Rp32–40 juta"], ["31 Desember", "≥ Rp50 juta"],
 ] as const;
 
 export const weeklyKpis = [["Prospek baru", "50 / minggu"], ["Outreach personal", "30–50 / minggu"], ["Reply", "Catat"], ["Diskusi serius", "Catat"], ["Quotation", "Catat"], ["Closing", "Catat"], ["Nilai deal", "Catat"], ["Repeat order", "Catat"], ["Jam produksi / video", "Catat"], ["Jumlah revisi", "Catat"]] as const;
+
