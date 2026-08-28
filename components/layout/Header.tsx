@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { CtaLink } from "@/components/ui/CtaLink";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { getWhatsAppUrl, navigation } from "@/config/site";
 
 export function Header() {
@@ -15,6 +16,7 @@ export function Header() {
         <nav className="desktop-nav" aria-label="Navigasi utama">
           {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
+        <ThemeToggle />
         <CtaLink href={getWhatsAppUrl()} eventName="cta_header_whatsapp" className="header-cta">
           Kirim satu topik <ArrowUpRight size={15} aria-hidden="true" />
         </CtaLink>
