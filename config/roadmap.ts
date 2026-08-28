@@ -105,6 +105,15 @@ export const confirmedCompletedTaskIds: readonly string[] = [
   "m2-8",  // Tata Cara Umroh 14:42 tampil sebagai long-form proof
   "m2-9",  // Teh Hijau 134 tampil sebagai commercial proof
   "m2-10", // Asmaul Husna Series tampil sebagai original-series proof
+  "m2-11", // Template quotation siap
+  "m2-12", // Client brief siap
+  "m2-13", // Onboarding form siap
+  "m2-14", // Scope Production vs Factory tertulis
+  "m2-15", // Aturan revisi tertulis
+  "m2-16", // Template pesan WhatsApp pertama siap
+  "m2-17", // Template follow-up siap
+  "m2-18", // Template invoice sederhana siap
+  "m2-19", // Daftar pekerjaan yang tidak termasuk paket tersedia
 ];
 
 export const financialCheckpoints = [
@@ -112,4 +121,3 @@ export const financialCheckpoints = [
 ] as const;
 
 export const weeklyKpis = [["Prospek baru", "50 / minggu"], ["Outreach personal", "30–50 / minggu"], ["Reply", "Catat"], ["Diskusi serius", "Catat"], ["Quotation", "Catat"], ["Closing", "Catat"], ["Nilai deal", "Catat"], ["Repeat order", "Catat"], ["Jam produksi / video", "Catat"], ["Jumlah revisi", "Catat"]] as const;
-

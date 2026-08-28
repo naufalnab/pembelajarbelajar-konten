@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { checkpointMilestone, confirmedCompletedTaskIds, financialCheckpoints, roadmapMilestones, weeklyKpis, type RoadmapMilestone } from "@/config/roadmap";
 
 const STORAGE_KEY = "pb-content-roadmap-v1";
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 const targetRevenue = 50_000_000;
 type LocalState = { completedTaskIds: string[]; actualRevenue?: number; version?: number };
 
@@ -100,4 +100,3 @@ export function RoadmapDashboard() {
     <section className="roadmap-wrap roadmap-kpis" id="kpi"><div className="roadmap-section-heading"><p className="roadmap-eyebrow">OPERATING RHYTHM</p><h2>KPI yang harus dilihat setiap minggu.</h2></div><div className="kpi-grid">{weeklyKpis.map(([label, goal]) => <div key={label}><span>{label}</span><strong>{goal}</strong></div>)}</div><div className="funnel-card"><div><p className="roadmap-eyebrow">CONTOH FUNNEL</p><h3>Jangan hanya lihat omzet.</h3><p>Jika closing rendah, lihat titik kebocorannya. Masalahnya bisa berada pada targeting, pesan outreach, portfolio, pricing, atau proses follow-up—bukan otomatis pada websitenya.</p></div><ol><li><strong>100</strong> outreach</li><li><strong>20</strong> reply</li><li><strong>8</strong> diskusi serius</li><li><strong>3</strong> closing</li></ol></div></section>
   </main><footer className="roadmap-footer"><span>Pembelajar Belajar · AI Content Factory</span><Link href="/">← Kembali ke konten.pembelajarbelajar.com</Link><button type="button" onClick={reset}>Reset progress</button></footer></>;
 }
-

@@ -18,26 +18,17 @@ test("confirmedCompletedTaskIds matches expected task structure", () => {
     );
   }
 
-  // M2 has 19 tasks: 10 completed (6 featured demo + 4 portfolio), 9 uncompleted (sales ops)
+  // M2 has 19 tasks: featured demo, portfolio, and verified Sales Kit assets.
   const m2 = roadmapMilestones.find((m) => m.id === "m2");
   assert.ok(m2);
   assert.equal(m2.tasks.length, 19);
 
-  // Completed M2 tasks (1 to 10)
-  for (let i = 1; i <= 10; i++) {
+  // All M2 assets are verified.
+  for (let i = 1; i <= 19; i++) {
     const taskId = `m2-${i}`;
     assert.ok(
       confirmedCompletedTaskIds.includes(taskId),
       `Task ${taskId} should be confirmed completed in M2`
-    );
-  }
-
-  // Uncompleted Sales Operations tasks (11 to 19)
-  for (let i = 11; i <= 19; i++) {
-    const taskId = `m2-${i}`;
-    assert.ok(
-      !confirmedCompletedTaskIds.includes(taskId),
-      `Task ${taskId} (Sales Ops) should NOT be in confirmedCompletedTaskIds`
     );
   }
 
@@ -55,12 +46,12 @@ test("confirmedCompletedTaskIds matches expected task structure", () => {
     }
   }
 
-  // Total confirmed tasks = 15 (M1) + 10 (M2) = 25
-  assert.equal(confirmedCompletedTaskIds.length, 25);
+  // Total confirmed tasks = 15 (M1) + 19 (M2) = 34
+  assert.equal(confirmedCompletedTaskIds.length, 34);
 });
 
 test("migration logic merges existing user tasks and preserves revenue", () => {
-  const SCHEMA_VERSION = 2;
+  const SCHEMA_VERSION = 3;
 
   // Scenario 1: Fresh user (clean localStorage)
   const freshRaw = null;
@@ -71,9 +62,9 @@ test("migration logic merges existing user tasks and preserves revenue", () => {
       version: SCHEMA_VERSION,
     };
   }
-  assert.equal(freshState.completedTaskIds.length, 25);
+  assert.equal(freshState.completedTaskIds.length, 34);
   assert.equal(freshState.actualRevenue, undefined);
-  assert.equal(freshState.version, 2);
+  assert.equal(freshState.version, 3);
 
   // Scenario 2: Existing user with manual progress in M3 and actualRevenue
   const existingStored = {
@@ -103,10 +94,10 @@ test("migration logic merges existing user tasks and preserves revenue", () => {
   assert.ok(migratedState.completedTaskIds.includes("m3-2"));
   // Confirmed tasks are included
   assert.ok(migratedState.completedTaskIds.includes("m1-15"));
-  assert.ok(migratedState.completedTaskIds.includes("m2-10"));
+  assert.ok(migratedState.completedTaskIds.includes("m2-19"));
   // Revenue is preserved
   assert.equal(migratedState.actualRevenue, 7500000);
-  assert.equal(migratedState.version, 2);
-  // Total tasks = 25 confirmed + 2 user manual (m3-1, m3-2) = 27
-  assert.equal(migratedState.completedTaskIds.length, 27);
+  assert.equal(migratedState.version, 3);
+  // Total tasks = 34 confirmed + 2 user manual (m3-1, m3-2) = 36
+  assert.equal(migratedState.completedTaskIds.length, 36);
 });

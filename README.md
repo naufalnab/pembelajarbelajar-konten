@@ -4,6 +4,10 @@ Landing page komersial untuk layanan produksi short-form storytelling Pembelajar
 
 Target production: `https://konten.pembelajarbelajar.com`
 
+## Internal Sales Kit
+
+`/sales-kit` adalah toolkit operasi penjualan internal: scope layanan, kebijakan revisi, template WhatsApp, client brief, onboarding, quotation, dan invoice. Halaman ini noindex, tidak menyimpan data helper ke server, dan menyediakan tombol copy. URL tersembunyi serta noindex bukan security boundary; jangan masukkan data pelanggan sensitif.
+
 ## Development
 
 Persyaratan: Node.js `>=22.13.0` dan npm.
