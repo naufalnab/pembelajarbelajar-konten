@@ -107,6 +107,28 @@ Repository ini **tidak mengubah DNS**. Jangan menambah, mengganti, atau menghapu
 - `app/page.tsx`: susunan landing page.
 - `app/globals.css`: design tokens, layout responsif, dan interaction styles.
 
+## Halaman Dukung Produksi
+
+Halaman publik `/dukung` digunakan untuk dukungan sukarela terhadap produksi Asmaul Husna Series. Serial tetap gratis untuk ditonton.
+
+### Mengubah Progress Episode
+
+Edit `config/support.ts`, lalu ubah satu angka pada `currentEpisode`:
+
+```ts
+currentEpisode: 28,
+```
+
+Contoh, saat episode ke-29 telah terbit, ubah menjadi `currentEpisode: 29`. Tampilan progres dan jumlah episode tersisa akan diperbarui otomatis tanpa mengubah komponen halaman.
+
+### Menambahkan Metode Dukungan
+
+Masih di `config/support.ts`, isi hanya informasi penerima yang memang publik dan benar (nomor rekening/e-wallet dan nama pemilik), kemudian ubah `enabled` menjadi `true`. Item yang belum lengkap atau belum aktif tidak akan tampil di halaman.
+
+QRIS hanya boleh diaktifkan setelah aset QRIS publik yang benar tersedia di `public/support/qris.webp`. Jangan pernah menyimpan PIN, OTP, password, CVV, atau kredensial perbankan lain di repository.
+
+Kemungkinan pengembangan berikutnya—yang belum dibuat pada versi ini—meliputi hitung episode otomatis, halaman seri khusus, pembaruan supporter, dan integrasi QRIS.
+
 ## Future Improvements
 
 Prioritas berikutnya adalah mengganti tiga placeholder dengan video demo nyata untuk Sekolah, Travel Umrah, dan Software/Business. Setelah ada kebutuhan dan data yang valid, analytics, studi kasus/testimonial terverifikasi, CMS, portal klien, pembayaran, atau otomasi produksi dapat dievaluasi—fitur-fitur tersebut sengaja tidak diimplementasikan pada versi pertama.
