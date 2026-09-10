@@ -7,7 +7,7 @@ export function ScopeSafetySection() {
   return (
     <section className="section scope-safety-section" aria-label="Scope dan prinsip produksi">
       <div className="container scope-safety-grid">
-        <details className="scope-details">
+        <details className="scope-details" open>
           <summary><span><small>Supaya workflow tetap cepat dan jelas</small><strong>Secara default tidak termasuk</strong></span><i aria-hidden="true">+</i></summary>
           <ul>{excluded.map((item) => <li key={item}><CheckCircle2 size={14} aria-hidden="true" />{item}</li>)}</ul>
         </details>
