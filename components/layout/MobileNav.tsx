@@ -11,7 +11,7 @@ export function MobileNav() {
   }
 
   return (
-    <details className="mobile-menu" ref={detailsRef}>
+    <details className="mobile-menu" ref={detailsRef} suppressHydrationWarning>
       <summary aria-label="Buka navigasi">
         <span className="menu-bars" aria-hidden="true" />
       </summary>

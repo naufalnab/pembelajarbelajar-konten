@@ -13,7 +13,7 @@ export function DifferentiatorSection() {
     <section className="section differentiator-section" aria-labelledby="different-title">
       <div className="container">
         <div className="split-heading">
-          <SectionHeading id="different-title" eyebrow="Proof of process" title="Bukan sekadar generate video." align="left" />
+          <SectionHeading id="different-title" eyebrow="Bukti alur kerja" title="Bukan sekadar membuat video dengan AI." align="left" />
           <p>Tools AI bisa berubah. <strong>Workflow yang rapi tetap dibutuhkan.</strong></p>
         </div>
         <div className="benefit-grid">

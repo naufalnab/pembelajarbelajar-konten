@@ -9,7 +9,7 @@ export function Footer() {
         <div className="footer-brand">
           <a className="brand" href="#main-content" aria-label="Kembali ke atas">
             <span className="brand-logo"><Image src="/brand/logo.webp" alt="" width={42} height={42} /></span>
-            <span className="brand-name"><strong>Pembelajar Belajar</strong><small>/ Konten</small></span>
+            <span className="brand-name"><strong>Pembelajar Belajar</strong><small>02 · Ruang Kreasi</small></span>
           </a>
           <p>Belajar, membuat, dan membagikan workflow yang bisa dipraktikkan.</p>
         </div>

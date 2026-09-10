@@ -58,8 +58,8 @@ export function PortfolioSection() {
         <SectionHeading
           id="portfolio-title"
           eyebrow="Contoh hasil"
-          title="Lihat bagaimana satu topik berubah menjadi cerita."
-          description="Lihat input awal, cara kami mengolahnya, lalu output yang siap dipublikasikan—tanpa perlu membedah layar penuh teks kecil."
+          title="Satu alur kerja. Beragam bentuk video."
+          description="Lihat topik awal, sudut cerita dan proses yang kami susun, lalu video akhirnya—dari short-form hingga serial dan long-form."
         />
 
         {/* Level 1: Featured Transformation Demo (Main Proof of Workflow) */}
@@ -71,7 +71,7 @@ export function PortfolioSection() {
         <div className="real-works-container">
           <div className="real-works-header">
             <span className="real-works-eyebrow">KARYA PRODUKSI</span>
-            <h3 className="real-works-title">Bukan hanya satu jenis cerita.</h3>
+            <h3 className="real-works-title">Formatnya berubah. Alurnya tetap terarah.</h3>
             <p className="real-works-lead">
               Workflow yang sama sudah digunakan untuk konten pendidikan, serial pembelajaran,
               umrah, long-form, short-form, dan produk.
@@ -90,7 +90,7 @@ export function PortfolioSection() {
 
           {/* View Mode: "All" -> Curated 4 Strong Proofs + Expandable Supporting Works */}
           {activeCategory === "all" ? (
-            <div className="curated-portfolio-wrapper">
+            <div className="curated-portfolio-wrapper" id="portfolio-results" role="tabpanel" aria-labelledby="portfolio-tab-all">
               {/* 4 Strong Proofs (2x2 Bento on Desktop, Clean 4-card stack on Mobile) */}
               <div
                 className="strong-proof-grid"
@@ -134,6 +134,9 @@ export function PortfolioSection() {
           ) : (
             /* View Mode: Specific Category -> All works in category directly */
             <div
+              id="portfolio-results"
+              role="tabpanel"
+              aria-labelledby={`portfolio-tab-${activeCategory}`}
               className="category-works-grid"
               aria-label={`Karya kategori ${activeCategory}`}
             >

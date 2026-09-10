@@ -9,6 +9,9 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { RevisionSection } from "@/components/sections/RevisionSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
+import { ServiceModelSection } from "@/components/sections/ServiceModelSection";
+import { OnboardingSection } from "@/components/sections/OnboardingSection";
+import { ScopeSafetySection } from "@/components/sections/ScopeSafetySection";
 import { MobileStickyCta } from "@/components/ui/MobileStickyCta";
 import { siteConfig } from "@/config/site";
 
@@ -26,7 +29,7 @@ const structuredData = {
       "@type": "Service",
       "@id": `${siteConfig.url}/#service`,
       name: siteConfig.serviceName,
-      serviceType: "Produksi short-form storytelling",
+      serviceType: "Konsultasi dan produksi konten video berbantuan AI",
       description: siteConfig.description,
       url: siteConfig.url,
       areaServed: { "@type": "Country", name: "Indonesia" },
@@ -43,12 +46,15 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <HeroSection />
+        <ServiceModelSection />
         <PortfolioSection />
         <ProblemSection />
         <DifferentiatorSection />
         <SolutionSection />
+        <OnboardingSection />
         <PricingSection />
         <RevisionSection />
+        <ScopeSafetySection />
         <FaqSection />
         <FinalCtaSection />
       </main>

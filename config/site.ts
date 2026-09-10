@@ -47,7 +47,7 @@ export const siteConfig = {
   locale: "id_ID",
   title: "AI Content Factory — Ubah Ide Jadi Konten | Pembelajar Belajar",
   description:
-    "Jasa produksi short-form storytelling dari ide, script, storyboard, visual, hingga video siap posting untuk sekolah, edukasi, travel, software, dan bisnis.",
+    "Layanan konsultasi dan produksi konten video berbantuan AI—dari topik, script, storyboard, visual, hingga video dan caption siap digunakan.",
   contact: {
     whatsappNumber,
     email: contactEmail,
@@ -109,6 +109,11 @@ export type EcosystemLink = {
 };
 
 export const ecosystemLinks: readonly EcosystemLink[] = [
+  {
+    label: "Website & Aplikasi",
+    href: "https://web.pembelajarbelajar.com",
+    description: "Sistem custom yang mengikuti alur kerja nyata.",
+  },
   {
     label: "Pembelajar Belajar",
     href: "https://pembelajarbelajar.com",

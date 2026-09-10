@@ -11,7 +11,7 @@ export function HeroSection() {
         {/* Left Column: Headline, Lead, CTAs, Micro-Proof */}
         <div className="hero-copy">
           <p className="eyebrow">
-            <span aria-hidden="true" /> AI Content Factory · Pembelajar Belajar
+            <span aria-hidden="true" /> 02 · Ruang Kreasi &nbsp; / &nbsp; AI Content Factory
           </p>
           <h1 id="hero-title">
             <span className="hero-title-line">Punya satu topik?</span>{" "}
@@ -19,7 +19,7 @@ export function HeroSection() {
             <em>siap posting.</em>
           </h1>
           <p className="hero-lead">
-            Kirim topik, link, atau bahan mentah. Kami susun angle, script, visual, hingga video final yang siap Anda posting.
+            Ini layanan produksi yang dikerjakan untuk Anda. Kirim topik, link, atau bahan mentah; kami susun angle, script, visual, video final, hingga caption.
           </p>
           <div className="hero-actions">
             <CtaLink href={getWhatsAppUrl()} eventName="cta_hero_whatsapp">

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { CtaLink } from "@/components/ui/CtaLink";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { getWhatsAppUrl, navigation } from "@/config/site";
 
 export function Header() {
@@ -11,12 +10,11 @@ export function Header() {
       <div className="header-inner">
         <a className="brand" href="#main-content" aria-label="Pembelajar Belajar / Konten">
           <span className="brand-logo"><Image src="/brand/logo.webp" alt="" width={42} height={42} priority /></span>
-          <span className="brand-name"><strong>Pembelajar Belajar</strong><small>/ Konten</small></span>
+          <span className="brand-name"><strong>Pembelajar Belajar</strong><small>02 · Ruang Kreasi</small></span>
         </a>
         <nav className="desktop-nav" aria-label="Navigasi utama">
           {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
-        <ThemeToggle />
         <CtaLink href={getWhatsAppUrl()} eventName="cta_header_whatsapp" className="header-cta">
           Kirim satu topik <ArrowUpRight size={15} aria-hidden="true" />
         </CtaLink>

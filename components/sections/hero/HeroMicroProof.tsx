@@ -1,19 +1,19 @@
 import { Check } from "lucide-react";
 
 const desktopProofItems = [
-  "Mulai Rp200 ribu",
-  "Script & storyboard dulu",
-  "Approve sebelum produksi",
+  "Factory mulai Rp450 ribu",
+  "Naskah & storyboard lebih dulu",
+  "Setujui arah sebelum produksi",
 ] as const;
 
 const mobileProofItems = [
-  "Mulai Rp200 ribu",
-  "Approve sebelum produksi",
+  "Factory mulai Rp450 ribu",
+  "Setujui arah sebelum produksi",
 ] as const;
 
 export function HeroMicroProof() {
   return (
-    <div className="hero-micro-proof" aria-label="Jaminan alur produksi terkontrol">
+    <div className="hero-micro-proof" aria-label="Ringkasan alur produksi">
       <div className="proof-list-desktop">
         {desktopProofItems.map((item) => (
           <span key={item} className="proof-item">
