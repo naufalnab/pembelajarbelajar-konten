@@ -16,29 +16,29 @@ export function TransformationDemo() {
         <p className="transformation-descriptor">{heroDemoData.descriptor}</p>
       </div>
 
-      {/* Main 3-Step Flow */}
-      <div className="transformation-flow">
-        {/* Step 1: Topik */}
+      {/* Main 3-Step Vertical Flow */}
+      <div className="transformation-flow vertical-flow">
+        {/* Step 1: Topik dari Klien */}
         <div className="flow-step flow-step-1">
           <TopicCard data={heroDemoData.topic} />
         </div>
 
-        {/* Connector 1 */}
+        {/* Vertical Connector 1 */}
         <div className="flow-joint flow-joint-1">
-          <FlowConnector />
+          <FlowConnector label="Kami mulai mengolah" />
         </div>
 
-        {/* Step 2: Story */}
+        {/* Step 2: Kami Olah */}
         <div className="flow-step flow-step-2">
           <StoryCard data={heroDemoData.story} />
         </div>
 
-        {/* Connector 2 */}
+        {/* Vertical Connector 2 */}
         <div className="flow-joint flow-joint-2">
-          <FlowConnector />
+          <FlowConnector label="Menjadi hasil akhir" />
         </div>
 
-        {/* Step 3: Final Video */}
+        {/* Step 3: Siap Posting */}
         <div className="flow-step flow-step-3">
           <FinalVideoCard data={heroDemoData.video} />
         </div>
@@ -49,10 +49,11 @@ export function TransformationDemo() {
         <div className="footer-message">
           <p className="footer-highlight">
             <strong>{heroDemoData.bottomNote}</strong>{" "}
-            <span>Kami bantu mengolah sisanya menjadi cerita yang siap diproduksi.</span>
+            <span>Kami bantu mengolah sisanya sampai menjadi konten yang siap diproduksi.</span>
           </p>
         </div>
       </div>
     </section>
   );
 }
+

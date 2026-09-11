@@ -8,30 +8,32 @@ export function TopicCard({ data }: { data: HeroDemoData["topic"] }) {
         <span className="step-tag" id="step-topic-heading">
           <span className="step-num">{data.step}</span>
           <span className="step-sep">·</span>
-          <span className="step-title">TOPIK</span>
+          <span className="step-title">{data.label.replace(/^\d+\s*·\s*/, "")}</span>
         </span>
         <span className="step-caption">{data.caption}</span>
       </div>
 
       <div className="topic-card-body">
-        <div className="topic-note-pin" aria-hidden="true">
-          <span className="pin-dot" />
-          <span className="topic-badge">
-            <FileText size={12} aria-hidden="true" />
-            <span>1 Topik dari Klien</span>
-          </span>
+        <div className="topic-main-row">
+          <div className="topic-badge" aria-hidden="true">
+            <FileText size={13} className="topic-icon" />
+            <span>Topik Awal</span>
+          </div>
+          <blockquote className="topic-question">
+            &ldquo;{data.question}&rdquo;
+          </blockquote>
         </div>
-        <blockquote className="topic-question">
-          &ldquo;{data.question}&rdquo;
-        </blockquote>
-        <div className="topic-meta">
+
+        <div className="topic-meta-row">
           <span className="meta-category">{data.category}</span>
+          <span className="meta-divider" aria-hidden="true">·</span>
           <span className="meta-hint">
-            <Sparkles size={11} aria-hidden="true" />
-            <span>Tanpa perlu script lengkap</span>
+            <Sparkles size={12} aria-hidden="true" />
+            <span>{data.hint || "Tanpa perlu script lengkap"}</span>
           </span>
         </div>
       </div>
     </article>
   );
 }
+

@@ -5,6 +5,11 @@ export interface HeroStoryboardScene {
   description: string;
 }
 
+export interface HeroScriptPoint {
+  time: string;
+  text: string;
+}
+
 export interface HeroDemoData {
   eyebrow: string;
   descriptor: string;
@@ -15,13 +20,23 @@ export interface HeroDemoData {
     caption: string;
     question: string;
     category: string;
+    hint: string;
   };
   story: {
     step: string;
     label: string;
     caption: string;
     hook: string;
+    script: {
+      angle: string;
+      points: readonly HeroScriptPoint[];
+    };
     scenes: readonly HeroStoryboardScene[];
+    visualDirection: {
+      style: string;
+      palette: readonly string[];
+      tone: string;
+    };
     processTags: readonly string[];
   };
   video: {
@@ -46,16 +61,25 @@ export const heroDemoData: HeroDemoData = {
   bottomNote: "Anda cukup mulai dari topiknya.",
   topic: {
     step: "01",
-    label: "01 · TOPIK",
+    label: "01 · TOPIK DARI KLIEN",
     caption: "Dari klien",
     question: "Kenapa anak takut salah saat belajar?",
     category: "Materi edukasi sekolah",
+    hint: "Tanpa perlu script lengkap",
   },
   story: {
     step: "02",
-    label: "02 · STORY",
-    caption: "Kami olah",
+    label: "02 · KAMI OLAH",
+    caption: "Proses kreatif",
     hook: "Kadang anak bukan tidak bisa. Ia hanya takut jawabannya salah.",
+    script: {
+      angle: "Empati orang tua & pendidik",
+      points: [
+        { time: "00-06s", text: "Validasi ketakutan anak di kelas" },
+        { time: "07-19s", text: "Mengapa salah adalah bagian belajar" },
+        { time: "20-28s", text: "Ruang aman untuk berani mencoba" },
+      ],
+    },
     scenes: [
       {
         id: 1,
@@ -76,7 +100,12 @@ export const heroDemoData: HeroDemoData = {
         description: "Menemukan ruang aman untuk belajar",
       },
     ],
-    processTags: ["Script", "Storyboard", "Visual Direction"],
+    visualDirection: {
+      style: "Ilustrasi editorial hangat",
+      palette: ["#123F39", "#1C7B72", "#D9A44A", "#FBFDF8"],
+      tone: "Ramah, santai, berbobot",
+    },
+    processTags: ["Hook", "Script", "Storyboard", "Visual Direction"],
   },
   video: {
     step: "03",
@@ -93,3 +122,4 @@ export const heroDemoData: HeroDemoData = {
     posterSrc: undefined,
   },
 };
+
